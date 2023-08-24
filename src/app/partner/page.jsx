@@ -35,7 +35,7 @@ const Partner = () => {
       <h1 className=" text-2xl text-center font-bold pb-5">Our Partners</h1>
       <div>
         <div className=" flex justify-center">
-          <div className=" w-11/12 md:w-3/4 grid gap-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+          <div className=" w-11/12 md:w-3/4 grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
             {partners.map((item) => (
               <div
                 key={item.id}
