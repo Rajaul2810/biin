@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { BsMenuButtonWideFill, BsFillBackspaceFill } from 'react-icons/bs';
 import { BiChevronDown } from 'react-icons/bi';
 import Link from 'next/link';
-import logo from '../../../public/logo.png'
+import logo from '../../../public/wlogo.png'
 import Image from 'next/image';
 
 
@@ -22,7 +22,7 @@ export const Navbar = () => {
                         <div className=' hidden md:block'>
                             <div className=' flex justify-center items-center gap-4 h-16 text-white'>
                                 <Link className=' text-sm hover:text-teal-500' href="/">Home</Link>
-                                <Link className=' text-sm hover:text-teal-500' href="/contact">Contact Us</Link>
+                                <Link className=' text-sm hover:text-teal-500' href="/about">About Us</Link>
                                 {/* <div className="dropdown dropdown-hover dropdown-end">
                                     <div className=' flex justify-center items-center group/item hover:text-teal-500'>
                                         <label tabIndex={0} className=" text-sm">Our Activity </label>
@@ -67,7 +67,7 @@ export const Navbar = () => {
                                 </div>
                                 <div className="dropdown dropdown-hover dropdown-end">
                                     <div className=' flex justify-center items-center group/item hover:text-teal-500'>
-                                        <label tabIndex={0} className=" text-sm">Join Us</label>
+                                        <label tabIndex={0} className=" text-sm">Get Involved</label>
                                         <BiChevronDown size={20} className='group-hover/item:rotate-180 ' />
                                     </div>
                                     <ul tabIndex={0} className=" text-black dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
@@ -77,19 +77,8 @@ export const Navbar = () => {
                                         <li><a href='https://forms.gle/JjMmTJdTxCkhxzsNA' target='_blank'>Register as a Mentor</a></li>
                                     </ul>
                                 </div>
-                                <div className="dropdown dropdown-hover dropdown-end">
-                                    <div className=' flex justify-center items-center group/item hover:text-teal-500'>
-                                        <label tabIndex={0} className=" text-sm">More</label>
-                                        <BiChevronDown size={20} className='group-hover/item:rotate-180 ' />
-                                    </div>
-                                    <ul tabIndex={0} className=" text-black dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><a>FAQ</a></li>
-                                        <li><a>Constitution</a></li>
-                                        <li><a>Rules and Regulation</a></li>
-                                        <li><Link href='/contact'>Contact Us</Link></li>
-                                        <li><Link href='/about'>About Us</Link></li>
-                                    </ul>
-                                </div>
+                                 <Link className='text-sm hover:text-teal-500' href="/partner">Partner</Link>
+                                <Link className=' text-sm hover:text-teal-500' href="/contact">Contact Us</Link>
                             </div>
                         </div>
 
@@ -112,7 +101,8 @@ export const Navbar = () => {
                     isOpen && (
                         <div className='flex flex-col md:hidden justify-center items-center gap-4 p-2 bg-white rounded-lg m-2 text-gray-700 z-50'>
                             <Link className=' text-sm hover:text-teal-500' href="/">Home</Link>
-                            <Link className=' text-sm hover:text-teal-500' href="/contact">Contact Us</Link>
+                            <Link className=' text-sm hover:text-teal-500' href='/about'>About Us</Link>
+                           
                             {/* <div className="dropdown cursor-pointer dropdown-end">
                                     <div className=' flex justify-center items-center group/item hover:text-teal-500'>
                                         <label tabIndex={0} className=" text-sm">Our Activity </label>
@@ -157,7 +147,7 @@ export const Navbar = () => {
                             </div>
                             <div className="dropdown  dropdown-end cursor-pointer">
                                 <div className=' flex justify-center items-center group/item hover:text-teal-500 cursor-pointer'>
-                                    <label tabIndex={0} className=" text-sm">Join Us</label>
+                                    <label tabIndex={0} className=" text-sm">Get Involved</label>
                                     <BiChevronDown size={20} className='group-hover/item:rotate-180 ' />
                                 </div>
                                 <ul tabIndex={0} className=" text-black dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
@@ -167,19 +157,9 @@ export const Navbar = () => {
                                         <li><a href='https://forms.gle/JjMmTJdTxCkhxzsNA' target='_blank'>Register as a Mentor</a></li>
                                 </ul>
                             </div>
-                            <div className="dropdown dropdown-end cursor-pointer">
-                                <div className=' flex justify-center items-center group/item hover:text-teal-500 cursor-pointer'>
-                                    <label tabIndex={0} className=" text-sm">More</label>
-                                    <BiChevronDown size={20} className='group-hover/item:rotate-180 ' />
-                                </div>
-                                <ul tabIndex={0} className=" text-black dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                    <li><a>FAQ</a></li>
-                                    <li><a>Constitution</a></li>
-                                    <li><a>Rules and Regulation</a></li>
-                                    <li><Link href='/contact'>Contact Us</Link></li>
-                                    <li><Link href='/about'>About Us</Link></li>
-                                </ul>
-                            </div>
+                            <Link className='text-sm hover:text-teal-500' href="/partner">Partner</Link>
+                            <Link className=' text-sm hover:text-teal-500' href="/contact">Contact Us</Link>
+                            
                         </div>
                     )
                 }

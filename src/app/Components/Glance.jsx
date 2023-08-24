@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { BsFillCheckCircleFill } from 'react-icons/bs'
-import about1 from '../../../public/about1.jpg'
+import about2 from '../../../public/about2.jpeg'
 import about from '../../../public/about.jpg'
 
 const Glance = () => {
@@ -22,14 +22,14 @@ const Glance = () => {
                             <p className='flex items-center mb-2'><BsFillCheckCircleFill color='teal' className=' me-2' /> E-Learning Platforms</p>
                         </div>
                         <div>
-                            <Image src={about} alt='man' width='100%' className=' rounded-md' />
+                            <a href="https://forms.gle/tqTmSpieThsCeQFV6" target='_blank'><Image src={about} alt='man' width='100%' className=' rounded-md' /></a>
                         </div>
                     </div>
                 </div>
                 <div className=' flex justify-center items-center'>
                     <div className=' w-11/12 md:w-3/4 grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 place-items-center '>
                         <div>
-                            <Image src={about1} alt='man' width='100%' className=' rounded-md' />
+                        <a href="https://forms.gle/5GYLHndDiLfrc5br6" target='_blank'><Image src={about2} alt='man' width='100%' className=' rounded-md' /></a>
                         </div>
                         <div>
                             <p className='flex items-center mb-2'><BsFillCheckCircleFill color='teal' className=' me-2' />Social Impact Projects</p>

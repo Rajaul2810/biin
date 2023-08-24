@@ -32,7 +32,7 @@ const AboutUs = () => {
                             type:"spring"
                         }}
                         >
-                            <Image src={about1} alt='man' height="100%" width='100%' className=' rounded-md' />
+                           <a href="https://forms.gle/pocQfGR3gBVScM2L9"> <Image src={about1} alt='man' height="100%" width='100%' className=' rounded-md' /></a>
                         </motion.div>
                     </div>
                 </div>
