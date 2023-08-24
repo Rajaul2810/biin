@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { FiChevronsRight } from 'react-icons/fi';
-import logo from '../../../public/logo.png'
+import logo from '../../../public/wlogo.png'
 
 const Footer = () => {
     return (
