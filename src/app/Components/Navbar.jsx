@@ -77,7 +77,7 @@ export const Navbar = () => {
                                         <li><a href='https://forms.gle/JjMmTJdTxCkhxzsNA' target='_blank'>Register as a Mentor</a></li>
                                     </ul>
                                 </div>
-                                 <Link className='text-sm hover:text-teal-500' href="/partner">Partner</Link>
+                                 {/* <Link className='text-sm hover:text-teal-500' href="/partner">Partner</Link> */}
                                 <Link className=' text-sm hover:text-teal-500' href="/contact">Contact Us</Link>
                             </div>
                         </div>
@@ -157,7 +157,7 @@ export const Navbar = () => {
                                         <li><a href='https://forms.gle/JjMmTJdTxCkhxzsNA' target='_blank'>Register as a Mentor</a></li>
                                 </ul>
                             </div>
-                            <Link className='text-sm hover:text-teal-500' href="/partner">Partner</Link>
+                            {/* <Link className='text-sm hover:text-teal-500' href="/partner">Partner</Link> */}
                             <Link className=' text-sm hover:text-teal-500' href="/contact">Contact Us</Link>
                             
                         </div>
