@@ -7,7 +7,7 @@ import Hero from "./Components/Hero";
 import Mission from "./Components/Mission";
 import WhyJoin from "./Components/WhyJoin";
 import Contact from "./contact/page";
-// import Partner from "./partner/page";
+import Partner from "./partner/page";
 
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
       <Glance />
       <Counter />
       <WhyJoin />
-      {/* <Partner/> */}
+      <Partner/>
       <Contact />
     </div>
   )

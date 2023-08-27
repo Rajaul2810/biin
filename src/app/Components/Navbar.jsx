@@ -23,37 +23,7 @@ export const Navbar = () => {
                             <div className=' flex justify-center items-center gap-4 h-16 text-white'>
                                 <Link className=' text-sm hover:text-teal-500' href="/">Home</Link>
                                 <Link className=' text-sm hover:text-teal-500' href="/about">About Us</Link>
-                                {/* <div className="dropdown dropdown-hover dropdown-end">
-                                    <div className=' flex justify-center items-center group/item hover:text-teal-500'>
-                                        <label tabIndex={0} className=" text-sm">Our Activity </label>
-                                        <BiChevronDown size={20} className='group-hover/item:rotate-180 ' />
-                                    </div>
-                                    <ul tabIndex={0} className=" text-black dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><a>Campus Activation</a></li>
-                                        <li><a>Workshop / Seminar</a></li>
-                                    </ul>
-                                </div> */}
-                                {/* <div className="dropdown dropdown-hover dropdown-end">
-                                    <div className=' flex justify-center items-center group/item hover:text-teal-500'>
-                                        <label tabIndex={0} className=" text-sm">Gallery </label>
-                                        <BiChevronDown size={20} className='group-hover/item:rotate-180 ' />
-                                    </div>
-                                    <ul tabIndex={0} className=" text-black dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><a>Videos</a></li>
-                                        <li><a>Photos</a></li>
-                                    </ul>
-                                </div> */}
-                                {/* <div className="dropdown dropdown-hover dropdown-end">
-                                    <div className=' flex justify-center items-center group/item hover:text-teal-500'>
-                                        <label tabIndex={0} className=" text-sm">Events </label>
-                                        <BiChevronDown size={20} className='group-hover/item:rotate-180 '  />
-                                    </div>
-                                    <ul tabIndex={0} className=" text-black dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><a>Tech Mania</a></li>
-                                        <li><a> Sturtup Olympiad</a></li>
-                                    </ul>
-                                </div> */}
-                                {/* <Link className='text-sm hover:text-teal-500' href="/">Partner</Link> */}
+                            
                                 <div className="dropdown dropdown-hover dropdown-end">
                                     <div className=' flex justify-center items-center group/item hover:text-teal-500'>
                                         <label tabIndex={0} className=" text-sm"> Our Team </label>
@@ -77,7 +47,7 @@ export const Navbar = () => {
                                         <li><a href='https://forms.gle/JjMmTJdTxCkhxzsNA' target='_blank'>Register as a Mentor</a></li>
                                     </ul>
                                 </div>
-                                 {/* <Link className='text-sm hover:text-teal-500' href="/partner">Partner</Link> */}
+                                 <Link className='text-sm hover:text-teal-500' href="/partner">Partner</Link>
                                 <Link className=' text-sm hover:text-teal-500' href="/contact">Contact Us</Link>
                             </div>
                         </div>
@@ -102,38 +72,6 @@ export const Navbar = () => {
                         <div className='flex flex-col md:hidden justify-center items-center gap-4 p-2 bg-white rounded-lg m-2 text-gray-700 z-50'>
                             <Link className=' text-sm hover:text-teal-500' href="/">Home</Link>
                             <Link className=' text-sm hover:text-teal-500' href='/about'>About Us</Link>
-                           
-                            {/* <div className="dropdown cursor-pointer dropdown-end">
-                                    <div className=' flex justify-center items-center group/item hover:text-teal-500'>
-                                        <label tabIndex={0} className=" text-sm">Our Activity </label>
-                                        <BiChevronDown size={20} className='group-hover/item:rotate-180 ' />
-                                    </div>
-                                    <ul tabIndex={0} className=" text-black dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><a>Campus Activation</a></li>
-                                        <li><a>Workshop / Seminar</a></li>
-                                    </ul>
-                                </div> */}
-                            {/* <div className="dropdown cursor-pointer dropdown-end">
-                                    <div className=' flex justify-center items-center group/item hover:text-teal-500'>
-                                        <label tabIndex={0} className=" text-sm">Gallery </label>
-                                        <BiChevronDown size={20} className='group-hover/item:rotate-180 ' />
-                                    </div>
-                                    <ul tabIndex={0} className=" text-black dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><a>Videos</a></li>
-                                        <li><a>Photos</a></li>
-                                    </ul>
-                                </div> */}
-                            {/* <div className="dropdown  dropdown-end cursor-pointer">
-                                    <div className=' flex justify-center items-center group/item hover:text-teal-500'>
-                                        <label tabIndex={0} className=" text-sm">Events </label>
-                                        <BiChevronDown size={20} className='group-hover/item:rotate-180 '  />
-                                    </div>
-                                    <ul tabIndex={0} className=" text-black dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><a>Tech Mania</a></li>
-                                        <li><a> Sturtup Olympiad</a></li>
-                                    </ul>
-                                </div> */}
-                            {/* <Link className='text-sm hover:text-teal-500' href="/">Partner</Link> */}
                             <div className="dropdown  dropdown-end cursor-pointer">
                                 <div className=' flex justify-center items-center group/item hover:text-teal-500 cursor-pointer'>
                                     <label tabIndex={0} className=" text-sm"> Our Team </label>
@@ -157,7 +95,7 @@ export const Navbar = () => {
                                         <li><a href='https://forms.gle/JjMmTJdTxCkhxzsNA' target='_blank'>Register as a Mentor</a></li>
                                 </ul>
                             </div>
-                            {/* <Link className='text-sm hover:text-teal-500' href="/partner">Partner</Link> */}
+                            <Link className='text-sm hover:text-teal-500' href="/partner">Partner</Link>
                             <Link className=' text-sm hover:text-teal-500' href="/contact">Contact Us</Link>
                             
                         </div>

@@ -20,7 +20,7 @@ const Footer = () => {
 
                             <li>
                                 <a
-                                    href="https://www.facebook.com/profile.php?id=100088669787964"
+                                    href="https://www.facebook.com/BIIN.network"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-gray-400 hover:text-gray-300"
@@ -30,7 +30,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <Link
-                                    href="https://www.facebook.com/profile.php?id=100088669787964"
+                                    href="https://www.facebook.com/BIIN.network"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-gray-400 hover:text-gray-300"
@@ -40,7 +40,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <Link
-                                    href="https://www.facebook.com/profile.php?id=100088669787964"
+                                    href="https://www.facebook.com/BIIN.network"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-gray-400 hover:text-gray-300"
