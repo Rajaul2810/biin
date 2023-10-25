@@ -11,25 +11,25 @@ import Image from 'next/image';
 
 const Partner = () => {
   return (
-    <section className=' bg-white pt-10 pb-10'>
+    <section className=' bg-slate-100 pt-10 pb-10'>
         <h1 className=' text-center text-4xl font-bold'>OUR PARTNER</h1>
-        <Marquee speed={80}>
-           <Image src={part} alt='logo' className=' h-20 w-32 me-10 p-5'/>
-           <Image src={part1} alt='logo' className=' h-20 w-32 me-10 p-5'/>
-           <Image src={part3} alt='logo' className=' h-20 w-32 me-10 p-5'/>
-           <Image src={part4} alt='logo' className=' h-20 w-32 me-10 p-5'/>
-           <Image src={part5} alt='logo' className=' h-20 w-32 me-10 p-5'/>
-           <Image src={part6} alt='logo' className=' h-20 w-32 me-10 p-5'/>
-           <Image src={part7} alt='logo' className=' h-20 w-32 me-10 p-5'/>
+        <Marquee speed={50} className=' mt-2 mb-2'>
+           <Image src={part} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
+           <Image src={part1} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
+           <Image src={part3} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
+           <Image src={part4} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
+           <Image src={part5} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
+           <Image src={part6} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
+           <Image src={part7} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
         </Marquee>
-        <Marquee speed={80} direction='right'>
-           <Image src={part} alt='logo' className=' h-20 w-32 me-10 p-5'/>
-           <Image src={part1} alt='logo' className=' h-20 w-32 me-10 p-5'/>
-           <Image src={part3} alt='logo' className=' h-20 w-32 me-10 p-5'/>
-           <Image src={part4} alt='logo' className=' h-20 w-32 me-10 p-5'/>
-           <Image src={part5} alt='logo' className=' h-20 w-32 me-10 p-5'/>
-           <Image src={part6} alt='logo' className=' h-20 w-32 me-10 p-5'/>
-           <Image src={part7} alt='logo' className=' h-20 w-32 me-10 p-5'/>
+        <Marquee speed={50} direction='right'>
+           <Image src={part} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
+           <Image src={part1} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
+           <Image src={part3} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
+           <Image src={part4} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
+           <Image src={part5} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
+           <Image src={part6} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
+           <Image src={part7} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
         </Marquee>
     </section>
   )

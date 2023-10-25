@@ -58,10 +58,10 @@ const Footer = () => {
                         <Link href="#">
                             <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center"><FiChevronsRight/>FAQ</p>
                         </Link>
-                        <Link href="#">
+                        <Link href="/about">
                             <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center"><FiChevronsRight/>About Us</p>
                         </Link>
-                        <Link href="#">
+                        <Link href="/contact">
                             <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center"><FiChevronsRight/>Contact Us</p>
                         </Link>
                         <Link href="#">
@@ -80,7 +80,7 @@ const Footer = () => {
                     <Link href="#">
                         <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center"><FiChevronsRight/>Events</p>
                     </Link>
-                    <Link href="#">
+                    <Link href="/partner">
                         <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center"><FiChevronsRight/>Our Partners</p>
                     </Link>
                     <Link href="#">
@@ -93,7 +93,7 @@ const Footer = () => {
                     <div>
                         <p className='text-gray-400 text-sm text-center'><a href="#" className=' underline hover:text-white'>Terms of use</a> | <a href="#" className=' underline hover:text-white'>Privacy Policy</a></p>
                         <p className="text-gray-400 text-sm">
-                            &copy; {new Date().getFullYear()} BIIN. All rights reserved. Designed & Developed by
+                            &copy; {new Date().getFullYear()} BIIN. All rights reserved. Designed & Developed by <a className=' underline' href="https://www.facebook.com/profile.php?id=100088669787964">AyAl Corp Limited</a>
                         </p>
                     </div>
                 </div>

@@ -70,14 +70,14 @@ const Chairman = () => {
             {isOpen ? (
               <button
                 onClick={() => setIsOpen(false)}
-                className="btn text-teal-600"
+                className="text-white text-xs bg-teal-500 rounded-full lowercase p-2 shadow-md hover:scale-105 duration-150 transition"
               >
                 see less
               </button>
             ) : (
               <button
                 onClick={() => setIsOpen(true)}
-                className="btn text-teal-600"
+                className=" text-white text-xs bg-teal-500 rounded-full lowercase p-2 shadow-md hover:scale-105 duration-150 transition"
               >
                 see more
               </button>
@@ -129,14 +129,14 @@ const Chairman = () => {
             {isOpen2 ? (
               <button
                 onClick={() => setIsOpen2(false)}
-                className="btn text-teal-600"
+                className="text-white text-xs bg-teal-500 rounded-full lowercase p-2 shadow-md hover:scale-105 duration-150 transition"
               >
                 see less
               </button>
             ) : (
               <button
                 onClick={() => setIsOpen2(true)}
-                className="btn text-teal-600"
+                className="text-white text-xs bg-teal-500 rounded-full lowercase p-2 shadow-md hover:scale-105 duration-150 transition"
               >
                 see more
               </button>

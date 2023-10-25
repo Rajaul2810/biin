@@ -15,7 +15,9 @@ const Mission = () => {
                         duration:2,
                         type:"spring"
                     }}
-                     className="grid flex-grow p-5 card bg-white rounded-box place-items-center">
+                    whileInView={{opacity:1}}
+                    viewport={{once:true}}
+                     className="grid flex-grow p-5 card bg-white rounded-box shadow-sm place-items-center">
                         <h1 className='font-bold'>Mission</h1>
                         <p className=' text-justify'>Our mission at BIIN is to empower the youth of Bangladesh by providing them with foster innovation, nurturing a generation of tech-savvy individuals capable of positively impacting society and contributing to the nation&apos;s socio-economic growth.</p>
                     </motion.div>
@@ -27,7 +29,9 @@ const Mission = () => {
                         duration:2,
                         type:"spring"
                     }}
-                    className="grid flex-grow p-5 card bg-white rounded-box place-items-center">
+                    whileInView={{opacity:1}}
+                    viewport={{once:true}}
+                    className="grid flex-grow p-5 card bg-white rounded-box shadow-sm place-items-center">
                         <h1 className='font-bold'>Vision</h1>
                         <p className=' text-justify'>We create a vibrant ecosystem that inspires and equips young individuals with IT expertise and entrepreneurial spirit to thrive in the digital era.</p>
                     </motion.div>

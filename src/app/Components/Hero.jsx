@@ -42,7 +42,7 @@ const Hero = () => {
               <p className="mb-5 text-white">
                 <Link
                   href="/contact"
-                  className="btn bg-gradient-to-r from-teal-600 to-teal-500 p-3  rounded-md hover:border-2 hover:border-white "
+                  className="btn bg-gradient-to-r from-teal-600 to-teal-500 p-3  shadow-md pe-5 ps-5  rounded-md hover:scale-105 duration-150 transition"
                 >
                   Contact Us
                 </Link>
