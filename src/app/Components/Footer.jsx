@@ -93,7 +93,7 @@ const Footer = () => {
                     <div>
                         <p className='text-gray-400 text-sm text-center'><a href="#" className=' underline hover:text-white'>Terms of use</a> | <a href="#" className=' underline hover:text-white'>Privacy Policy</a></p>
                         <p className="text-gray-400 text-sm">
-                            &copy; {new Date().getFullYear()} BIIN. All rights reserved. Designed & Developed by <a className=' underline' href="https://www.facebook.com/profile.php?id=100088669787964">AyAl Corp Limited</a>
+                            &copy; {new Date().getFullYear()} BIIN. All rights reserved. Designed & Developed by <a className=' underline' href="https://www.facebook.com/moonmrajib" target='_blank'>Moon M. Rajib</a>
                         </p>
                     </div>
                 </div>

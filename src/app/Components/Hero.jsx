@@ -36,7 +36,7 @@ const Hero = () => {
               </motion.h1>
               <p className=" text-gray-400 pt-5 pb-5 mb-5">
                 Bangladesh ICT & Innovation Network (BIIN) is an exemplary
-                non-profit organization that stands as a beacon of hope for the
+                 organization that stands as a beacon of hope for the
                 youth of Bangladesh.
               </p>
               <p className="mb-5 text-white">

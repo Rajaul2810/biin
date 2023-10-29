@@ -23,7 +23,7 @@ const AboutUs = () => {
                 className=" text-gray-700 pt-5 pb-3 mb-5 text-justify"
               >
                 Bangladesh ICT & Innovation Network (BIIN) is an exemplary
-                non-profit organization that stands as a beacon of hope for the
+                organization that stands as a beacon of hope for the
                 youth of Bangladesh. By providing skill development, fostering
                 innovation, and promoting entrepreneurship, BIIN is empowering
                 the young generation to lead the way toward a digitally
@@ -50,7 +50,6 @@ const AboutUs = () => {
               }}
             >
               <a href="https://forms.gle/pocQfGR3gBVScM2L9">
-                {" "}
                 <Image
                   src={about1}
                   alt="man"
