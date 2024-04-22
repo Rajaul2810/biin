@@ -12,7 +12,7 @@ import Image from 'next/image';
 const Partner = () => {
   return (
     <section className=' bg-slate-100 pt-10 pb-10'>
-        <h1 className=' text-center text-4xl font-bold'>OUR PARTNER</h1>
+        <h1 className=' text-center text-4xl font-bold text-gray-700'>OUR PARTNER</h1>
         <Marquee speed={50} className=' mt-2 mb-2'>
            <Image src={part} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>
            <Image src={part1} alt='logo' className=' h-20 w-32 me-10 p-5 bg-white shadow-md m-2 rounded-md'/>

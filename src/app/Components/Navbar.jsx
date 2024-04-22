@@ -10,17 +10,17 @@ import Image from 'next/image';
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
     return (
-        <section>
+        <section className='sticky top-0 z-50'>
             <section>
                 <div className='flex justify-center items-center'>
-                    <nav className=' flex justify-between w-full   bg-slate-800 shadow-md pe-5 ps-5 pt-1 pb-1 z-20'>
+                    <nav className=' flex justify-between w-full   bg-slate-800 shadow-md pe-5 ps-5 py-2'>
 
 
                         <div className=' flex items-center ms-10 max-md:ms-0'>
                             <Image src={logo} alt='logo' height={80} width={80} />
                         </div>
                         <div className=' hidden md:block'>
-                            <div className=' flex justify-center items-center gap-4 h-16 text-white'>
+                            <div className=' flex justify-center items-center gap-4 h-16 text-gray-100 font-bold '>
                                 <Link className=' text-sm hover:text-teal-500' href="/">Home</Link>
                                 <Link className=' text-sm hover:text-teal-500' href="/about">About Us</Link>
                             
@@ -29,7 +29,7 @@ export const Navbar = () => {
                                         <label tabIndex={0} className=" text-sm"> Our Team </label>
                                         <BiChevronDown size={20} className='group-hover/item:rotate-180 ' />
                                     </div>
-                                    <ul tabIndex={0} className=" text-black dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                    <ul tabIndex={0} className=" text-black dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-52">
                                         <li><Link href='/chairman'>Board-Member</Link></li>
                                         {/* <li><a>Resource Persons</a></li> */}
                                         <li><Link href='/changeMaker'>Change-makers</Link></li>
@@ -40,7 +40,7 @@ export const Navbar = () => {
                                         <label tabIndex={0} className=" text-sm">Get Involved</label>
                                         <BiChevronDown size={20} className='group-hover/item:rotate-180 ' />
                                     </div>
-                                    <ul tabIndex={0} className=" text-black dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                    <ul tabIndex={0} className=" text-black dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-52">
                                         <li><a href='https://forms.gle/tqTmSpieThsCeQFV6' target='_blank'>Become a Member</a></li>
                                         <li><a href='https://forms.gle/pocQfGR3gBVScM2L9' target='_blank'>Register your Club</a></li>
                                         <li><a href='https://forms.gle/5GYLHndDiLfrc5br6' target='_blank'>Open a Chapter</a></li>

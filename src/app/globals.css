@@ -25,3 +25,13 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.text_heading_bg {
+  background-image: url('/text_bg_red.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: max-content;
+  padding: 6px 50px;
+  color: white;
+}

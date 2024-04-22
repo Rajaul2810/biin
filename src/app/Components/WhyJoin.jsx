@@ -30,17 +30,17 @@ const data = [
 const WhyJoin = () => {
   return (
     <section className='pt-10 pb-14 bg-slate-50'>
-            <h1 className=' text-2xl text-center font-bold pb-5'>Why Join BIIN Family</h1>
+            <h1 className=' text-4xl text-center font-bold pb-5 text-gray-700'>Why Join BIIN Family</h1>
             <div>
                 <div className=' flex justify-center'>
                     <div className=' w-11/12 md:w-3/4 grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
                         {
                             data.map((item) =>
-                                <div key={item.id} className=' p-5 rounded-md shadow-md hover:transform hover:scale-105 duration-150 bg-teal-400 hover:bg-white'>
+                                <div key={item.id} className=' p-5 rounded-md shadow-md hover:transform hover:scale-105 duration-150 bg-teal-400 hover:bg-white border'>
                                     <div className=' flex flex-col justify-center items-center'>
                                         <p className=' self-center text-teal-700 bg-teal-100 p-3 rounded-md shadow-sm mb-2 '>{item.icon}</p>
-                                        <h1 className='text-center font-bold pt-2 pb-2'>{item.title}</h1>
-                                        <p className=' text-justify text-sm'>{item.description}</p>
+                                        <h1 className='text-center font-bold pt-2 pb-2 text-gray-700'>{item.title}</h1>
+                                        <p className=' text-justify text-sm text-gray-600'>{item.description}</p>
                                     </div>
                                 </div>
                             )

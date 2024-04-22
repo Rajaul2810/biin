@@ -5,14 +5,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+
 const AboutUs = () => {
   return (
-    <section className="pt-10 pb-14 bg-slate-50">
+    <section className=" pb-14 bg-slate-50 pt-40">
       <div>
         <div className=" flex justify-center">
           <div className=" w-11/12 md:w-3/4 grid gap-5 grid-cols-1 md:grid-cols-2 place-items-center ">
             <div className="">
-              <h1 className=" font-semibold text-2xl">About Us</h1>
+              <h1 className="text_heading_bg text-5xl font-bold">
+                About Us
+              </h1>
               <motion.p
                 initial={{ y: "2rem", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -23,8 +26,8 @@ const AboutUs = () => {
                 className=" text-gray-700 pt-5 pb-3 mb-5 text-justify"
               >
                 Bangladesh ICT & Innovation Network (BIIN) is an exemplary
-                organization that stands as a beacon of hope for the
-                youth of Bangladesh. By providing skill development, fostering
+                organization that stands as a beacon of hope for the youth of
+                Bangladesh. By providing skill development, fostering
                 innovation, and promoting entrepreneurship, BIIN is empowering
                 the young generation to lead the way toward a digitally
                 inclusive and prosperous future. Through their relentless

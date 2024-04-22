@@ -4,13 +4,13 @@ import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi'
 
 const Contact = () => {
     return (
-        <section className=' bg-white'>
-            <div className=' flex justify-center items-center pt-10 pb-14'>
+        <section className=' bg-white '>
+            <div className=' flex justify-center items-center min-h-screen p-5'>
                 <div className='w-11/12 md:w-3/4 grid grid-cols-1 md:grid-cols-2 place-items-center '>
                     <div className='pb-5'>
-                        <p className=' text-3xl font-extrabold  text-black'>GET IN TOUCH</p>
+                        <p className=' text-4xl font-extrabold  text-black'>GET IN TOUCH</p>
 
-                        <p className=' text-md pb-5 pt-2'>Send us a note and we will be in touch shortly.</p>
+                        <p className=' text-md pb-5 pt-2 text-gray-600'>Send us a note and we will be in touch shortly.</p>
                         <div className=' mb-2 flex p-3 shadow-lg  rounded-lg'>
                             <p className=' bg-gradient-to-r from-teal-600 to-teal-500 p-3 w-10 h-10 rounded-full  shadow-indigo-500/50 shadow-md'><FiMapPin color='white' /></p>
                             <div className=' ms-5 text-gray-500'>
