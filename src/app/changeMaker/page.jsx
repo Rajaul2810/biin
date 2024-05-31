@@ -38,13 +38,7 @@ const makers = [
         profession: 'Jr. Software Developer, AyAl Corp Limited',
         image: user
     },
-    {
-        id: 6,
-        name: 'Arif Hossain Rajon',
-        rule: 'Coordinator, Events',
-        profession: 'Student, Govt. Titumir College',
-        image: user
-    },
+    
     {
         id: 7,
         name: 'Mohammad Sish',
@@ -80,13 +74,7 @@ const makers = [
         profession: 'Student, North South University',
         image: user
     },
-    {
-        id: 12,
-        name: 'Ranjan Das Ashiq',
-        rule: 'Executive',
-        profession: 'Student, Govt. Titumir College',
-        image: user
-    },
+    
     {
         id: 13,
         name: 'Jasiya Mayin Usha',
@@ -101,14 +89,7 @@ const makers = [
         profession: 'Student, Bangladesh University of Textiles-BUTEX',
         image: user
     },
-    {
-        id: 15,
-        name: 'Mobashwira Zannat',
-        rule: 'Executive',
-        profession: 'Student, Govt. College of Applied Human Science',
-        image: user
-    },
-
+    
 ]
 
 const ChangeMaker = () => {
@@ -117,10 +98,10 @@ const ChangeMaker = () => {
             <div>
                 <h1 className=' text-center text-4xl font-bold pb-10 text-gray-700'> Our Change Makers</h1>
                 <div className=' flex justify-center'>
-                    <div className=' w-11/12 md:w-3/4 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 '>
+                    <div className=' w-11/12 md:w-3/4 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 '>
                         {
                             makers.map((item) =>
-                                <div key={item.id} className='p-3 rounded-lg shadow-sm bg-white  hover:transform hover:scale-105 hover:rounded-none hover:shadow-md duration-150 mt-10 '>
+                                <div key={item.id} className='p-5 rounded-lg shadow-sm bg-white  hover:transform hover:scale-105 hover:rounded-none hover:shadow-md duration-150 mt-10 '>
                                       <p className='flex justify-center'>  <Image src={user} alt='user' className=' rounded-full h-16 w-16 -mt-10 shadow-lg shadow-slate-300 bg-slate-100 object-center ' /></p>
                                     <h1 className=' text-center text-lg font-semibold pt-3 text-gray-700'>{item.name}</h1>
                                     <p className=' text-center text-gray-500 text-md'>{item.rule}</p>
