@@ -4,14 +4,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { FiChevronsRight } from 'react-icons/fi';
-import logo from '../../../public/wlogo.png'
+import logo from '../../../public/BIIN-Logo.png'
 
 const Footer = () => {
     return (
         <footer className="bg-black">
             <div className="max-w-7xl w-11/12 md:w-3/4 mx-auto grid gap-5 grid-cols-1 md:grid-cols-3 pt-5">
                 <div className='mb-5'>
-                    <Image src={logo} alt='logo' width={100}/>
+                    <Image src={logo} alt='logo' width={100} height={100} className='object-contain'/>
                     {/* <h2 className="text-white text-xl font-semibold pb-2">BIIN</h2> */}
                     <p className="text-gray-400">Welcome to Empowering Youth through IT Skill Development and innovative community.</p>
                     <div className="mt-4">
@@ -93,7 +93,7 @@ const Footer = () => {
                     <div>
                         <p className='text-gray-400 text-sm text-center'><a href="#" className=' underline hover:text-white'>Terms of use</a> | <a href="#" className=' underline hover:text-white'>Privacy Policy</a></p>
                         <p className="text-gray-400 text-sm">
-                            &copy; {new Date().getFullYear()} BIIN. All rights reserved. Designed & Developed by <a className=' underline' href="https://www.facebook.com/moonmrajib" target='_blank'>Moon M. Rajib</a>
+                            &copy; {new Date().getFullYear()} Bangladesh ICT & Innovation Network (BIIN)
                         </p>
                     </div>
                 </div>

@@ -23,7 +23,7 @@ const Contact = () => {
                             </div>
                             <div className='ms-4 text-gray-600'>
                                 <p className='font-bold text-black text-lg'>Our Address:</p>
-                                <p className='text-sm'>SimpleTree Attalika, Level 19, Gulshan 2, Dhaka 1212, Bangladesh</p>
+                                <p className='text-sm'>SimpleTree Attalika (Level 19), 134 Gulshan Avenue, Dhaka 1212 Bangladesh</p>
                             </div>
                         </div>
                         
@@ -33,7 +33,7 @@ const Contact = () => {
                             </div>
                             <div className='ms-4 text-gray-600'>
                                 <p className='font-bold text-black text-lg'>Our Email:</p>
-                                <a href='mailto:BDICTInnovationNetwork@gmail.com' className='text-sm text-emerald-600 hover:text-emerald-800 transition-colors'>BDICTInnovationNetwork@gmail.com</a>
+                                <a href='mailto:info@biin.org.bd' className='text-sm text-emerald-600 hover:text-emerald-800 transition-colors'>info@biin.org.bd</a>
                             </div>
                         </div>
                         
@@ -43,7 +43,7 @@ const Contact = () => {
                             </div>
                             <div className='ms-4 text-gray-600'>
                                 <p className='font-bold text-black text-lg'>Our Phone:</p>
-                                <a href='tel:+8801854555534' className='text-sm text-emerald-600 hover:text-emerald-800 transition-colors'>+88 01854555534</a>
+                                <a href='tel:096401237013' className='text-sm text-emerald-600 hover:text-emerald-800 transition-colors'>096401237013</a>
                             </div>
                         </div>
 

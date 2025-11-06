@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import hero from "../../../public/hero.jpg";
+import hero from "../../../public/BIIN-Logo.png";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -100,13 +100,13 @@ const Hero = () => {
             transition={{ duration: 1.2, type: "spring" }}
             className="flex justify-center items-center"
           >
-            <div className="relative w-full max-w-md aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-emerald-200 bg-white/10">
+            <div className="relative w-full max-w-md aspect-[4/3] rounded-3xl overflow-hidden ">
               <Image
                 src={hero}
                 alt="BIIN - Empowering Youth Through Technology"
                 fill
-                style={{ objectFit: "cover" }}
-                className="rounded-3xl"
+                style={{ objectFit: "contain" }}
+                className="rounded-xl w-full h-full"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/30 via-transparent to-transparent rounded-3xl"></div>

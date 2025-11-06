@@ -2,7 +2,7 @@
 import React from 'react'
 import part from '../../../public/partner.png'
 import part1 from '../../../public/partner1.png'
-import part3 from '../../../public/partner3.png'
+//import part3 from '../../../public/partner3.png'
 import part4 from '../../../public/partner4.png'
 import part5 from '../../../public/partner5.png'
 import part6 from '../../../public/partner6.png'
@@ -12,7 +12,7 @@ import Image from 'next/image';
 const partners = [
   { src: part, alt: 'Partner 1' },
   { src: part1, alt: 'Partner 2' },
-  { src: part3, alt: 'Partner 3' },
+  //{ src: part3, alt: 'Partner 3' },
   { src: part4, alt: 'Partner 4' },
   { src: part5, alt: 'Partner 5' },
   { src: part6, alt: 'Partner 6' },
