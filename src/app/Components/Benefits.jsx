@@ -104,9 +104,7 @@ const Benefits = () => {
                   Unlock exclusive opportunities, resources, and a vibrant community. Join us and shape the future of Bangladesh&apos;s digital landscape!
                 </p>
               <a
-                href="https://forms.gle/pocQfGR3gBVScM2L9"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/get-involved"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-sky-500 text-white font-semibold rounded-full shadow-lg hover:scale-105 hover:from-sky-500 hover:to-emerald-500 transition-all duration-200 animate-pulse"
               >
                 Join BIIN <BsArrowRight size={22} />
