@@ -55,7 +55,7 @@ const Footer = () => {
 
                     <div className="">
                         <h2 className="text-white text-lg font-semibold pb-2">Explore</h2>
-                        <Link href="#">
+                        <Link href="/faq">
                             <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center"><FiChevronsRight/>FAQ</p>
                         </Link>
                         <Link href="/about">
