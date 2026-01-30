@@ -1,11 +1,64 @@
 "use client"
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import mission from '../../../public/mission.jpg'
-import { FaLightbulb, FaEye } from "react-icons/fa";
+import { FaLightbulb, FaEye, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
+// Event images for Mission section (remaining 5 images)
+const missionImages = [
+  {
+    src: "/BIIN Profile Image/ICANN Outreach Program (July 14, 2024).jpg",
+    title: "ICANN Outreach Program",
+    date: "July 14, 2024"
+  },
+  {
+    src: "/BIIN Profile Image/Medical Support for Injured Student Activists (October 20, 2024).jpg",
+    title: "Medical Support for Injured Student Activists",
+    date: "October 20, 2024"
+  },
+  {
+    src: "/BIIN Profile Image/Startup Adda (July 31, 2023).jpg",
+    title: "Startup Adda",
+    date: "July 31, 2023"
+  },
+  {
+    src: "/BIIN Profile Image/Workshop for BIJF Members (Tech Journalist) September 27, 2025.jpg",
+    title: "Workshop for BIJF Members",
+    date: "September 27, 2025"
+  },
+  {
+    src: "/BIIN Profile Image/Workshop for TMGB Members (Tech Journalist) September 20, 2025.jpg",
+    title: "Workshop for TMGB Members",
+    date: "September 20, 2025"
+  }
+];
 
 const Mission = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-slide effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => 
+        prevIndex === missionImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // Change slide every 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? missionImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === missionImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
     <section className="bg-slate-100 pt-10 pb-14">
       <motion.div
@@ -28,8 +81,79 @@ const Mission = () => {
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative w-full"
           >
-            <Image src={mission} alt="BIIN Mission - Empowering Youth Through Technology" className="h-96 rounded-lg shadow-lg" />
+            {/* Image Slider Container */}
+            <div className="relative overflow-hidden rounded-xl shadow-2xl">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="relative aspect-[4/3] w-full"
+                >
+                  <Image
+                    src={missionImages[currentIndex].src}
+                    alt={missionImages[currentIndex].title}
+                    fill
+                    className="object-cover rounded-xl"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={currentIndex === 0}
+                    loading={currentIndex === 0 ? "eager" : "lazy"}
+                  />
+                  {/* Preload next image */}
+                  {missionImages[(currentIndex + 1) % missionImages.length] && (
+                    <Image
+                      src={missionImages[(currentIndex + 1) % missionImages.length].src}
+                      alt="preload"
+                      fill
+                      className="hidden"
+                      sizes="1px"
+                      loading="eager"
+                    />
+                  )}
+                  {/* Overlay with event info */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 rounded-b-xl">
+                    <h4 className="text-white font-semibold text-lg">{missionImages[currentIndex].title}</h4>
+                    <p className="text-gray-300 text-sm">{missionImages[currentIndex].date}</p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={goToPrevious}
+                className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-2 rounded-full transition-all duration-300 z-10"
+                aria-label="Previous image"
+              >
+                <FaChevronLeft size={20} />
+              </button>
+              <button
+                onClick={goToNext}
+                className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-2 rounded-full transition-all duration-300 z-10"
+                aria-label="Next image"
+              >
+                <FaChevronRight size={20} />
+              </button>
+            </div>
+
+            {/* Dot Indicators */}
+            <div className="flex justify-center gap-2 mt-4">
+              {missionImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    index === currentIndex 
+                      ? "bg-emerald-500 w-6" 
+                      : "bg-gray-400 hover:bg-gray-500"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </motion.div>
           
           <div className="space-y-6">
