@@ -6,7 +6,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 const membershipCategories = [
   {
-    id: 1,
+    id: 2,
     title: "Youth Member",
     subtitle: "For Young Innovators, Entrepreneurs & Change-Makers (Age 21–42)",
     icon: <FaUserGraduate className="text-blue-500" size={32} />,
@@ -16,21 +16,21 @@ const membershipCategories = [
     bgColor: "bg-blue-50",
     borderColor: "border-blue-200"
   },
+  // {
+  //   id: 2,
+  //   title: "Associate Member",
+  //   subtitle: "For Students, Volunteers, Interns & University Club Members",
+  //   icon: <FaUsers className="text-emerald-500" size={32} />,
+  //   registrationFee: "BDT 1,000",
+  //   renewalFee: "BDT 1,200",
+  //   description: "Designed to engage passionate individuals involved in part-time activities, projects, or university-based tech clubs.",
+  //   requirements: "Student/Institution ID, recommendation if applicable. Free of Cost for underprivileged students and registered BIIN university clubs.",
+  //   color: "from-emerald-500 to-teal-500",
+  //   bgColor: "bg-emerald-50",
+  //   borderColor: "border-emerald-200"
+  // },
   {
-    id: 2,
-    title: "Associate Member",
-    subtitle: "For Students, Volunteers, Interns & University Club Members",
-    icon: <FaUsers className="text-emerald-500" size={32} />,
-    registrationFee: "BDT 1,000",
-    renewalFee: "BDT 1,200",
-    description: "Designed to engage passionate individuals involved in part-time activities, projects, or university-based tech clubs.",
-    requirements: "Student/Institution ID, recommendation if applicable. Free of Cost for underprivileged students and registered BIIN university clubs.",
-    color: "from-emerald-500 to-teal-500",
-    bgColor: "bg-emerald-50",
-    borderColor: "border-emerald-200"
-  },
-  {
-    id: 3,
+    id: 1,
     title: "Institutional Member",
     subtitle: "For Organizations Committed to Digital Development",
     icon: <FaBuilding className="text-purple-500" size={32} />,
@@ -40,34 +40,34 @@ const membershipCategories = [
     bgColor: "bg-purple-50",
     borderColor: "border-purple-200"
   },
+  // {
+  //   id: 4,
+  //   title: "Donor Member",
+  //   subtitle: "Supporters Investing in Youth & Innovation",
+  //   icon: <FaHandshake className="text-orange-500" size={32} />,
+  //   registrationFee: "BDT 50,000",
+  //   renewalFee: "Flexible (any amount)",
+  //   description: "Individuals or institutions offering significant financial, resource, or programmatic support receive premium recognition and naming rights where applicable.",
+  //   requirements: "Donor profile, contribution details, impact area preference.",
+  //   color: "from-orange-500 to-red-500",
+  //   bgColor: "bg-orange-50",
+  //   borderColor: "border-orange-200"
+  // },
+  // {
+  //   id: 5,
+  //   title: "Life Member",
+  //   subtitle: "For Visionaries Committed to Long-Term Impact",
+  //   icon: <FaCrown className="text-yellow-500" size={32} />,
+  //   registrationFee: "BDT 100,000",
+  //   renewalFee: "Voluntary",
+  //   description: "One-time contribution ensures lifetime access to BIIN's network and events. Ideal for philanthropists, policy-makers, academics, industrialists, and senior advisors.",
+  //   requirements: "Bio, professional background, contribution statement.",
+  //   color: "from-yellow-500 to-orange-500",
+  //   bgColor: "bg-yellow-50",
+  //   borderColor: "border-yellow-200"
+  // },
   {
-    id: 4,
-    title: "Donor Member",
-    subtitle: "Supporters Investing in Youth & Innovation",
-    icon: <FaHandshake className="text-orange-500" size={32} />,
-    registrationFee: "BDT 50,000",
-    renewalFee: "Flexible (any amount)",
-    description: "Individuals or institutions offering significant financial, resource, or programmatic support receive premium recognition and naming rights where applicable.",
-    requirements: "Donor profile, contribution details, impact area preference.",
-    color: "from-orange-500 to-red-500",
-    bgColor: "bg-orange-50",
-    borderColor: "border-orange-200"
-  },
-  {
-    id: 5,
-    title: "Life Member",
-    subtitle: "For Visionaries Committed to Long-Term Impact",
-    icon: <FaCrown className="text-yellow-500" size={32} />,
-    registrationFee: "BDT 100,000",
-    renewalFee: "Voluntary",
-    description: "One-time contribution ensures lifetime access to BIIN's network and events. Ideal for philanthropists, policy-makers, academics, industrialists, and senior advisors.",
-    requirements: "Bio, professional background, contribution statement.",
-    color: "from-yellow-500 to-orange-500",
-    bgColor: "bg-yellow-50",
-    borderColor: "border-yellow-200"
-  },
-  {
-    id: 6,
+    id: 3,
     title: "General Member",
     subtitle: "For Citizens Committed to ICT Development & Social Change",
     icon: <FaUserTie className="text-indigo-500" size={32} />,

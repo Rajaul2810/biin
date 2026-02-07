@@ -16,17 +16,17 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <AboutUs/>
+      <AboutUs />
       <Mission />
       <Activities />
-      <Benefits/>
-      <Membership />
       <Trustees />
+      <Benefits />
+      <Membership />
       <Glance />
       <Counter />
-      <WhyJoin />
-      <Partner/>
+      {/* <WhyJoin /> */}
+      <Partner />
       <Contact />
     </div>
-  )
+  );
 }

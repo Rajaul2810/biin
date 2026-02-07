@@ -80,10 +80,10 @@ const Hero = () => {
               className="w-full flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
             >
               <Link
-                href="/contact"
+                href="/get-involved"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-sky-500 text-white font-semibold shadow-lg hover:from-sky-500 hover:to-emerald-500 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400"
               >
-                Join BIIN <FiArrowRight size={22} />
+                Join BIIN <FiArrowRight size={22} />e
               </Link>
               <Link
                 href="/about"

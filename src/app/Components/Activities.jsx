@@ -1,85 +1,87 @@
 "use client"
 import React from 'react'
 import { BsFillSafe2Fill, BsFillMortarboardFill, BsFillCpuFill, BsFillLightningChargeFill } from 'react-icons/bs'
-import { IoGameController, IoLaptop, IoLayers, IoMedical, IoRibbon, IoCode, IoBusiness, IoSchool, IoGlobe } from 'react-icons/io5'
+import { IoGameController, IoLaptop, IoLayers, IoMedical, IoRibbon, IoCode, IoSchool, IoGlobe, IoTrophy, IoCodeSlash } from 'react-icons/io5'
 import { FaLaptopCode, FaUsers, FaGraduationCap, FaHandshake, FaLightbulb, FaRocket } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
 const sizes = 32;
 const data = [
-    {
-        id: 1,
-        title: 'ICT & Programming Training',
-        icon: <FaLaptopCode size={sizes} />,
-        description: 'Comprehensive training in programming and ICT skills'
-    },
-    {
-        id: 2,
-        title: 'Digital Literacy Campaigns',
-        icon: <IoGlobe size={sizes} />,
-        description: 'Rural Bangladesh digital literacy initiatives'
-    },
-    {
-        id: 3,
-        title: 'Hackathons & Codeathons',
-        icon: <IoCode size={sizes} />,
-        description: 'Tech competitions and innovation contests'
-    },
-    {
-        id: 4,
-        title: 'Startup Incubation',
-        icon: <FaRocket size={sizes} />,
-        description: 'Entrepreneurial support and mentorship'
-    },
-    {
-        id: 5,
-        title: 'Esports & Gaming Tournaments',
-        icon: <IoGameController size={sizes} />,
-        description: 'Competitive gaming and esports events'
-    },
-    {
-        id: 6,
-        title: 'Tech Talks & Workshops',
-        icon: <FaLightbulb size={sizes} />,
-        description: 'Educational sessions and skill development'
-    },
-    {
-        id: 7,
-        title: 'University Club Programs',
-        icon: <FaUsers size={sizes} />,
-        description: 'Campus engagements and student leadership'
-    },
-    {
-        id: 8,
-        title: 'Learning Platforms',
-        icon: <FaGraduationCap size={sizes} />,
-        description: 'Remote learning solutions for students'
-    },
-    {
-        id: 9,
-        title: 'Youth IT Training Program',
-        icon: <IoLaptop size={sizes} />,
-        description: 'Comprehensive youth development program'
-    },
-    {
-        id: 10,
-        title: 'Bangladesh National ICT Fest',
-        icon: <IoRibbon size={sizes} />,
-        description: 'National technology festival and showcase'
-    },
-    {
-        id: 11,
-        title: 'ICT Job Fair & Internship Expo',
-        icon: <FaHandshake size={sizes} />,
-        description: 'Career opportunities and industry connections'
-    },
-    {
-        id: 12,
-        title: 'Startup Bootcamps',
-        icon: <IoBusiness size={sizes} />,
-        description: 'Intensive entrepreneurship training'
-    }
-]
+  {
+    id: 1,
+    title: "ICT and Innovation Awards",
+    icon: <IoTrophy size={sizes} />,
+    description:
+      "National celebration of technological creativity and innovation",
+  },
+
+  {
+    id: 2,
+    title: "Digital Literacy Campaigns",
+    icon: <IoGlobe size={sizes} />,
+    description: "Rural Bangladesh digital literacy initiatives",
+  },
+  {
+    id: 3,
+    title: "Hackathons & Codeathons",
+    icon: <IoCode size={sizes} />,
+    description: "Tech competitions and innovation contests",
+  },
+  {
+    id: 4,
+    title: "ICT & Programming Training",
+    icon: <FaLaptopCode size={sizes} />,
+    description: "Comprehensive training in programming and ICT skills",
+  },
+  {
+    id: 5,
+    title: "Esports & Gaming Tournaments",
+    icon: <IoGameController size={sizes} />,
+    description: "Competitive gaming and esports events",
+  },
+  {
+    id: 6,
+    title: "Tech Talks & Workshops",
+    icon: <FaLightbulb size={sizes} />,
+    description: "Educational sessions and skill development",
+  },
+  {
+    id: 7,
+    title: "University Club Programs",
+    icon: <FaUsers size={sizes} />,
+    description: "Campus engagements and student leadership",
+  },
+  {
+    id: 8,
+    title: "Learning Platforms",
+    icon: <FaGraduationCap size={sizes} />,
+    description: "Remote learning solutions for students",
+  },
+  {
+    id: 9,
+    title: "Youth IT Training Program",
+    icon: <IoLaptop size={sizes} />,
+    description: "Comprehensive youth development program",
+  },
+  {
+    id: 10,
+    title: "Bangladesh National ICT Fest",
+    icon: <IoRibbon size={sizes} />,
+    description: "National technology festival and showcase",
+  },
+  {
+    id: 11,
+    title: "ICT Job Fair & Internship Expo",
+    icon: <FaHandshake size={sizes} />,
+    description: "Career opportunities and industry connections",
+  },
+  {
+    id: 12,
+    title: "Code Village",
+    icon: <IoCodeSlash size={sizes} />,
+    description: "Rural Computer Literacy",
+  },
+];
 
 const Activities = () => {
     return (

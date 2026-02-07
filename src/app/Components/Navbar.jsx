@@ -8,12 +8,11 @@ import Image from "next/image";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
-  { name: "Awards", href: "https://awards.biin.org.bd " },
-  {
-    name: "Governance & Trust",
-    href: "/governance-trust",
-  },
+  { name: "About Us", href: "/about" },  { name: "Events", href: "/events" },  { name: "Awards", href: "https://awards.biin.org.bd " },
+  // {
+  //   name: "Governance & Trust",
+  //   href: "/governance-trust",
+  // },
   {
     name: "Get Involved",
     href: "/get-involved",
