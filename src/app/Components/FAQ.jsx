@@ -48,7 +48,7 @@ const faqData = [
     category: "Certification",
     icon: <HiAcademicCap className="text-yellow-400" size={24} />,
     question: "Are the certificates provided by BIIN internationally recognized?",
-    answer: "Yes, our specialized masterclasses and seminars come with certificates verified by BIIN's board of trustees and industry experts, which add significant value to your professional portfolio."
+    answer: "Yes, our specialized masterclasses and seminars come with certificates verified by BIIN&apos;s board of trustees and industry experts, which add significant value to your professional portfolio."
   },
   {
     id: 5,
@@ -62,14 +62,14 @@ const faqData = [
     category: "Partnership",
     icon: <HiOfficeBuilding className="text-indigo-400" size={24} />,
     question: "How can my university club partner with BIIN for an event?",
-    answer: "University clubs' representative can contact us directly at info@biin.org.bd to host joint Workshops, Hackathons, Tech Talks, or Job Fairs."
+    answer: "University clubs&apos; representative can contact us directly at info@biin.org.bd to host joint Workshops, Hackathons, Tech Talks, or Job Fairs."
   },
   {
     id: 7,
     category: "Career",
     icon: <HiBriefcase className="text-orange-400" size={24} />,
     question: "Does BIIN guarantee job placements?",
-    answer: "While we don't guarantee jobs, we provide an ICT Job Fair & Expo and direct recommendations for our top-performing members to our 50+ partner organizations."
+    answer: "While we don&apos;t guarantee jobs, we provide an ICT Job Fair & Expo and direct recommendations for our top-performing members to our 50+ partner organizations."
   },
   {
     id: 8,
@@ -325,7 +325,7 @@ const FAQ = () => {
           <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
             <h3 className="text-2xl font-bold text-white mb-3">Still have questions?</h3>
             <p className="text-gray-300 mb-6">
-              Can't find the answer you're looking for? Our team is here to help!
+              Can&apos;t find the answer you&apos;re looking for? Our team is here to help!
             </p>
             <a
               href="/contact"
