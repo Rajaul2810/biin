@@ -10,9 +10,7 @@ const membershipCategories = [
     title: "Youth Member",
     subtitle: "For Young Innovators, Entrepreneurs & Change-Makers (Age 21–42)",
     icon: <FaUserGraduate className="text-blue-500" size={32} />,
-    registrationFee: "BDT 5,000",
-    renewalFee: "BDT 2,500",
-    description: "Perfect for early-career professionals, tech enthusiasts, startup founders, and young leaders who want to engage in BIIN's dynamic programs and networks.",
+    description: "•\tCareer Guidance.\n•\tIndustry Certifications\n•\tExclusive Learning Resources.",
     requirements: "National ID, profile photo, contact info, occupation/startup details.",
     color: "from-blue-500 to-cyan-500",
     bgColor: "bg-blue-50",
@@ -36,9 +34,7 @@ const membershipCategories = [
     title: "Institutional Member",
     subtitle: "For Organizations Committed to Digital Development",
     icon: <FaBuilding className="text-purple-500" size={32} />,
-    registrationFee: "BDT 10,000",
-    renewalFee: "BDT 5,000",
-    description: "Open to corporations, business groups, NGOs, startups, universities, and training institutes aligned with BIIN's mission.",
+    description: "•\tBrand Exposure.\n•\tTop-Tier Recruitment.\n•\tStrategic Partnership.",
     requirements: "Company/NGO registration, logo, authorized representative info.",
     color: "from-purple-500 to-indigo-500",
     bgColor: "bg-purple-50",
@@ -75,9 +71,7 @@ const membershipCategories = [
     title: "General Member",
     subtitle: "For Citizens Committed to ICT Development & Social Change",
     icon: <FaUserTie className="text-indigo-500" size={32} />,
-    registrationFee: "BDT 10,000",
-    renewalFee: "BDT 5,000",
-    description: "This category is for professionals, educators, mentors, and social activists who wish to contribute actively to BIIN's mission of empowering youth through technology and community leadership.",
+    description: "•\tBe an Advisor.\n•\tProfessional Influence\n•\tRecognition.",
     requirements: "Full name, contact details, occupation, national ID, photo.",
     color: "from-indigo-500 to-purple-500",
     bgColor: "bg-indigo-50",
@@ -122,20 +116,9 @@ const Membership = () => {
                 </div>
               </div>
 
-              <p className="text-gray-700 mb-4 text-sm leading-relaxed">
+              <p className="text-gray-700 mb-4 text-sm leading-relaxed whitespace-pre-line">
                 {category.description}
               </p>
-
-              <div className="space-y-2 mb-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm font-medium text-gray-600">Registration Fee:</span>
-                  <span className="font-bold text-gray-800">{category.registrationFee}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm font-medium text-gray-600">Annual Renewal:</span>
-                  <span className="font-bold text-gray-800">{category.renewalFee}</span>
-                </div>
-              </div>
 
               <div className="bg-white/50 rounded-lg p-3 mb-4">
                 <h4 className="font-semibold text-gray-800 mb-2 text-sm">Requirements:</h4>
