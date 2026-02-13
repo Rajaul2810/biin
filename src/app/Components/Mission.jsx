@@ -7,30 +7,31 @@ import { FaLightbulb, FaEye, FaChevronLeft, FaChevronRight } from "react-icons/f
 // Event images for Mission section (remaining 5 images)
 const missionImages = [
   {
-    src: "/BIIN Profile Image/ICANN Outreach Program (July 14, 2024).jpg",
-    title: "ICANN Outreach Program",
-    date: "July 14, 2024"
+    src: "/Resize Image/0-06.jpg",
+    title: "Cyber Security Seminar",
+    date: "November 8, 2023",
   },
   {
-    src: "/BIIN Profile Image/Medical Support for Injured Student Activists (October 20, 2024).jpg",
-    title: "Medical Support for Injured Student Activists",
-    date: "October 20, 2024"
+    src: "/Resize Image/0-07.jpg",
+    title: "Coordination Meeting ",
+    date: "April 21, 2024",
   },
   {
-    src: "/BIIN Profile Image/Startup Adda (July 31, 2023).jpg",
-    title: "Startup Adda",
-    date: "July 31, 2023"
+    src: "/Resize Image/0-08.jpg",
+    title: "Book on BIIN’s Role in the July Revolution",
+    date: "August 11, 2024",
   },
   {
-    src: "/BIIN Profile Image/Workshop for BIJF Members (Tech Journalist) September 27, 2025.jpg",
-    title: "Workshop for BIJF Members",
-    date: "September 27, 2025"
+    src: "/Resize Image/0-03.jpg",
+    title: "Startup Adda ",
+    date: "July 31, 2023",
   },
+
   {
-    src: "/BIIN Profile Image/Workshop for TMGB Members (Tech Journalist) September 20, 2025.jpg",
-    title: "Workshop for TMGB Members",
-    date: "September 20, 2025"
-  }
+    src: "/Resize Image/0-11.jpg",
+    title: "5000-Member Celebration of BIIN ",
+    date: "August 4, 2023",
+  },
 ];
 
 const Mission = () => {
