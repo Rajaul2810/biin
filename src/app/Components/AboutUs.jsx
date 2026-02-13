@@ -8,19 +8,9 @@ import { FaUsers, FaGlobe, FaHandshake, FaLightbulb, FaChevronLeft, FaChevronRig
 // Event images for About Us section (first 6 images)
 const eventImages = [
   {
-    src: "/BIIN Profile Image/Asia Pacific ICT Alliance Awards 2025 (December 08, 2025).jpg",
-    title: "Asia Pacific ICT Alliance Awards",
+    src: "/Resize Image/0-10.jpg",
+    title: "Asia Pacific ICT Alliance Awards 2025 ",
     date: "December 08, 2025",
-  },
-  {
-    src: "/BIIN Profile Image/Bangladesh ICT & Innovation Awards 2025 (October 18, 2025).jpg",
-    title: "Bangladesh ICT & Innovation Awards",
-    date: "October 18, 2025",
-  },
-  {
-    src: "/BIIN Profile Image/5000-Member Celebration of BIIN (August 4, 2023).jpg",
-    title: "5000-Member Celebration",
-    date: "August 4, 2023",
   },
 
   // {
@@ -29,14 +19,25 @@ const eventImages = [
   //   date: "August 11, 2024",
   // },
   {
-    src: "/BIIN Profile Image/Coordination Meeting (April 21, 2024).jpg",
-    title: "Coordination Meeting",
-    date: "April 21, 2024",
+    src: "/Resize Image/0-09.jpg",
+    title: "Bangladesh ICT & Innovation Awards 2025",
+    date: "October 18, 2025",
   },
   {
-    src: "/BIIN Profile Image/Cyber Security Seminar (November 8, 2023).jpg",
-    title: "Cyber Security Seminar",
-    date: "November 8, 2023",
+    src: "/Resize Image/0-01.jpg",
+    title: "Workshop for TMGB Members (Tech Journalist)",
+    date: "September 20, 2025",
+  },
+
+  {
+    src: "/Resize Image/0-04.jpg",
+    title: "Medical Support for Injured Student Activists",
+    date: "October 20, 2024",
+  },
+  {
+    src: "/Resize Image/0-05.jpg",
+    title: "ICANN Outreach Program",
+    date: "July 14, 2024",
   },
 ];
 
