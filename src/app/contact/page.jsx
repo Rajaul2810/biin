@@ -43,7 +43,7 @@ const Contact = () => {
                             </div>
                             <div className='ms-4 text-gray-600'>
                                 <p className='font-bold text-black text-lg'>Our Phone:</p>
-                                <a href='tel:096401237013' className='text-sm text-emerald-600 hover:text-emerald-800 transition-colors'>096401237013</a>
+                                <a href='tel:096401237013' className='text-sm text-emerald-600 hover:text-emerald-800 transition-colors'>09640123701-3</a>
                             </div>
                         </div>
 
