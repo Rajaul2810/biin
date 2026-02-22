@@ -144,7 +144,7 @@ const Membership = () => {
               Members may upgrade or transition from one category to another (e.g., Youth Member to Life Member) with applicable discounts on registration or renewal fees.
             </p>
             <a
-              href="https://forms.gle/pocQfGR3gBVScM2L9"
+              // href="https://forms.gle/pocQfGR3gBVScM2L9"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white text-emerald-600 font-semibold rounded-full hover:bg-gray-100 transition-all duration-200"
