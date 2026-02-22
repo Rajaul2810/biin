@@ -68,7 +68,7 @@ const Mission = () => {
         transition={{ duration: 0.8 }}
         className="text-center mb-12"
       >
-        <h1 className="text-5xl font-bold text-gray-700 py-5">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-700 py-5">
           Our Mission & Vision
         </h1>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto px-4">

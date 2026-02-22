@@ -54,12 +54,12 @@ const Trustees = () => {
               <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full">
                 <div className="flex flex-col md:flex-row h-full">
                   {/* Image Section */}
-                  <div className="relative md:w-1/2 h-80 md:h-96 overflow-hidden">
+                  <div className="relative md:w-1/2 aspect-[3/4] md:aspect-auto md:h-96 overflow-hidden">
                     <Image
                       src={trustee.image}
                       alt={trustee.name}
                       fill
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     {/* Decorative Corner */}
