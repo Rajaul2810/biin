@@ -33,11 +33,11 @@ const stats = [
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-sky-900 via-indigo-900 to-emerald-900 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-sky-900 via-indigo-900 to-emerald-900">
       {/* Decorative Blobs */}
       <div className="absolute -top-20 -left-20 w-72 h-72 bg-emerald-400 opacity-20 rounded-full blur-3xl z-0"></div>
       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-indigo-400 opacity-20 rounded-full blur-3xl z-0"></div>
-      <div className="relative z-10 flex items-center justify-center min-h-[70vh] py-10">
+      <div className="relative z-10 flex items-center justify-center min-h-[75vh] py-16">
         <div className="w-11/12 max-w-7xl grid gap-10 grid-cols-1 md:grid-cols-2 items-center">
           {/* Left: Text */}
           <div className="flex flex-col items-center md:items-start">
@@ -45,7 +45,7 @@ const Hero = () => {
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, type: "spring" }}
-              className="text-4xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-sky-400 to-indigo-400 text-center md:text-left drop-shadow-lg"
+              className="text-4xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-sky-400 to-indigo-400 text-center md:text-left drop-shadow-lg pb-2"
             >
               Bangladesh ICT &
             </motion.h1>
@@ -77,13 +77,13 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1 }}
-              className="w-full flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+              className="w-full flex flex-row gap-4 justify-center md:justify-start"
             >
               <Link
                 href="/get-involved"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-sky-500 text-white font-semibold shadow-lg hover:from-sky-500 hover:to-emerald-500 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400"
               >
-                Join BIIN <FiArrowRight size={22} />e
+                Join BIIN <FiArrowRight size={22} />
               </Link>
               <Link
                 href="/about"
@@ -132,7 +132,7 @@ const Hero = () => {
         </div>
       </div>
       {/* Spacer for stat card overlap */}
-      <div className="h-32"></div>
+      <div className="h-44"></div>
     </section>
   );
 };

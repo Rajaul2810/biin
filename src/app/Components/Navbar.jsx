@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import { BsMenuButtonWideFill, BsFillBackspaceFill } from "react-icons/bs";
 import { BiChevronDown } from "react-icons/bi";
 import Link from "next/link";
@@ -25,6 +26,7 @@ const navLinks = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
+  const pathname = usePathname();
 
   // For mobile dropdowns
   const handleDropdown = (idx) => {
@@ -93,7 +95,11 @@ export const Navbar = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="px-3 py-2 rounded-lg text-sm text-black hover:bg-white/10 hover:text-teal-300 transition"
+                    className={`px-3 py-2 rounded-lg text-sm transition ${
+                      pathname === link.href
+                        ? "text-emerald-600 font-extrabold bg-emerald-50 border-b-4 border-emerald-500 shadow-sm"
+                        : "text-black hover:bg-white/10 hover:text-teal-300"
+                    }`}
                   >
                     {link.name}
                   </Link>
@@ -204,7 +210,11 @@ export const Navbar = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="block px-3 py-2 rounded-lg text-gray-800 hover:bg-teal-50 hover:text-teal-700 font-medium text-base transition"
+                    className={`block px-3 py-2 rounded-lg font-medium text-base transition ${
+                      pathname === link.href
+                        ? "bg-emerald-100 text-emerald-700 font-extrabold border-l-4 border-emerald-600 shadow-sm"
+                        : "text-gray-800 hover:bg-teal-50 hover:text-teal-700"
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
                     {link.name}

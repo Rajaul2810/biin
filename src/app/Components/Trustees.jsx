@@ -49,9 +49,9 @@ const Trustees = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="group"
+              className="group h-full"
             >
-              <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+              <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full">
                 <div className="flex flex-col md:flex-row h-full">
                   {/* Image Section */}
                   <div className="relative md:w-1/2 h-80 md:h-96 overflow-hidden">
@@ -103,12 +103,12 @@ const Trustees = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-gray-200 shadow-sm">
+          {/* <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-gray-200 shadow-sm">
             <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
             <span className="text-gray-600 text-sm">
               Registered under the Trust Act, ensuring complete transparency and accountability
             </span>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>
