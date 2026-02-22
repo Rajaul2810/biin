@@ -55,7 +55,7 @@ const Glance = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h1 className='text-5xl text-center font-bold pb-5 text-gray-700'>Impact at a Glance</h1>
+              <h1 className='text-3xl sm:text-4xl md:text-5xl text-center font-bold pb-5 text-gray-700'>Impact at a Glance</h1>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto px-4">
                 From urban tech hubs to underserved regions, BIIN&apos;s reach continues to expand nationwide.
               </p>

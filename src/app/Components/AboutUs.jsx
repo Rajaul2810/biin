@@ -68,12 +68,12 @@ const AboutUs = () => {
   };
 
   return (
-    <section className="pb-14 bg-slate-50 pt-40">
+    <section className="pb-14 bg-slate-50 pt-24 sm:pt-28">
       <div>
         <div className="flex justify-center">
           <div className="w-11/12 md:w-3/4 grid gap-5 grid-cols-1 md:grid-cols-2 place-items-center">
             <div className="">
-              <h1 className="text_heading_bg text-5xl font-bold">
+              <h1 className="text_heading_bg text-3xl sm:text-4xl md:text-5xl font-bold">
                 Who We Are
               </h1>
               <motion.p

@@ -9,21 +9,21 @@ import { FaUserGraduate, FaHandshake, FaLightbulb } from "react-icons/fa";
 
 const stats = [
   {
-    icon: <FaUserGraduate size={36} className="text-blue-500" />,
+    icon: <FaUserGraduate size={22} className="text-blue-500" />,
     label: "Students Empowered",
     value: "10,000+",
     bg: "bg-blue-50",
     border: "border-blue-200"
   },
   {
-    icon: <FaHandshake size={36} className="text-emerald-500" />,
+    icon: <FaHandshake size={22} className="text-emerald-500" />,
     label: "Partner Organizations",
     value: "50+",
     bg: "bg-emerald-50",
     border: "border-emerald-200"
   },
   {
-    icon: <FaLightbulb size={36} className="text-yellow-500" />,
+    icon: <FaLightbulb size={22} className="text-yellow-500" />,
     label: "Active Chapters",
     value: "50+",
     bg: "bg-yellow-50",
@@ -115,24 +115,24 @@ const Hero = () => {
         </div>
       </div>
       {/* Stats Card */}
-      <div className="relative z-20 flex justify-center -mb-32">
-        <div className="w-11/12 max-w-4xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 bg-white/90 backdrop-blur-md shadow-2xl rounded-2xl py-7 px-4 sm:px-8">
+      <div className="relative z-20 flex justify-center -mb-16">
+        <div className="w-11/12 max-w-4xl grid grid-cols-3 gap-3 sm:gap-6 bg-white/90 backdrop-blur-md shadow-2xl rounded-2xl py-5 sm:py-7 px-3 sm:px-8">
           {stats.map((stat, idx) => (
             <div
               key={stat.label}
-              className={`flex flex-col items-center justify-center gap-3 py-4 px-2 rounded-xl border ${stat.bg} ${stat.border} hover:shadow-lg transition-shadow duration-200`}
+              className={`flex flex-col items-center justify-center gap-1 sm:gap-3 py-3 sm:py-4 px-1 sm:px-2 rounded-xl border ${stat.bg} ${stat.border} hover:shadow-lg transition-shadow duration-200`}
             >
-              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-md mb-2">
+              <div className="flex items-center justify-center w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-white shadow-md mb-1 sm:mb-2">
                 {stat.icon}
               </div>
-              <p className="text-2xl font-bold text-gray-800">{stat.value}</p>
-              <p className="text-gray-500 font-medium text-center">{stat.label}</p>
+              <p className="text-base sm:text-2xl font-bold text-gray-800">{stat.value}</p>
+              <p className="text-gray-500 font-medium text-center text-xs sm:text-sm">{stat.label}</p>
             </div>
           ))}
         </div>
       </div>
       {/* Spacer for stat card overlap */}
-      <div className="h-44"></div>
+      <div className="h-28"></div>
     </section>
   );
 };

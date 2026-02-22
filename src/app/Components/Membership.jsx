@@ -149,7 +149,7 @@ const Membership = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white text-emerald-600 font-semibold rounded-full hover:bg-gray-100 transition-all duration-200"
             >
-              Start Your Application <BsArrowRight size={20} />
+              Subscribe For Updates <BsArrowRight size={20} />
             </a>
           </div>
         </motion.div>
