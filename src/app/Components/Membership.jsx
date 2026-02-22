@@ -1,4 +1,5 @@
 "use client";
+// Membership Component - BIIN
 import React from "react";
 import { motion } from "framer-motion";
 import { FaUserGraduate, FaUsers, FaBuilding, FaHandshake, FaCrown, FaUserTie } from "react-icons/fa";
