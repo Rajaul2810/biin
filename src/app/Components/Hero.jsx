@@ -33,7 +33,7 @@ const stats = [
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-sky-900 via-indigo-900 to-emerald-900">
+    <section className="relative bg-gradient-to-br from-sky-900 via-indigo-900 to-emerald-900 overflow-hidden">
       {/* Decorative Blobs */}
       <div className="absolute -top-20 -left-20 w-72 h-72 bg-emerald-400 opacity-20 rounded-full blur-3xl z-0"></div>
       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-indigo-400 opacity-20 rounded-full blur-3xl z-0"></div>
