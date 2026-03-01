@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import hero from "../../../public/BIIN-Logo.png";
+import hero from "../../../public/BIIN Logo-1.png";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -37,15 +37,15 @@ const Hero = () => {
       {/* Decorative Blobs */}
       <div className="absolute -top-20 -left-20 w-72 h-72 bg-emerald-400 opacity-20 rounded-full blur-3xl z-0"></div>
       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-indigo-400 opacity-20 rounded-full blur-3xl z-0"></div>
-      <div className="relative z-10 flex items-center justify-center min-h-[75vh] py-16">
-        <div className="w-11/12 max-w-7xl grid gap-10 grid-cols-1 md:grid-cols-2 items-center">
+      <div className="relative z-10 flex items-center justify-center min-h-[60vh] sm:min-h-[70vh] md:min-h-[75vh] py-10 sm:py-16">
+        <div className="w-11/12 max-w-7xl grid gap-6 sm:gap-10 grid-cols-1 md:grid-cols-2 items-center">
           {/* Left: Text */}
           <div className="flex flex-col items-center md:items-start">
             <motion.h1
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, type: "spring" }}
-              className="text-4xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-sky-400 to-indigo-400 text-center md:text-left drop-shadow-lg pb-2"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-sky-400 to-indigo-400 text-center md:text-left drop-shadow-lg pb-2"
             >
               Bangladesh ICT &
             </motion.h1>
@@ -53,7 +53,7 @@ const Hero = () => {
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.2, type: "spring" }}
-              className="text-4xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-pink-400 to-yellow-400 text-center md:text-left drop-shadow-lg mt-2"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-pink-400 to-yellow-400 text-center md:text-left drop-shadow-lg mt-2"
             >
               Innovation Network
             </motion.h1>
@@ -61,7 +61,7 @@ const Hero = () => {
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.4, type: "spring" }}
-              className="text-2xl sm:text-3xl font-bold text-emerald-300 text-center md:text-left mt-4"
+              className="text-xl sm:text-2xl md:text-3xl font-bold text-emerald-300 text-center md:text-left mt-4"
             >
               Empowering Youth Through Technology & Innovation
             </motion.h2>
@@ -69,7 +69,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 1 }}
-              className="text-lg sm:text-xl text-gray-200 mt-6 mb-6 text-center md:text-left max-w-xl"
+              className="text-base sm:text-lg md:text-xl text-gray-200 mt-4 sm:mt-6 mb-4 sm:mb-6 text-center md:text-left max-w-xl"
             >
               Welcome to BIIN – Bangladesh ICT & Innovation Network, a registered non-profit trust dedicated to transforming the future of Bangladesh through ICT skill development, startup incubation and youth empowerment.
             </motion.p>
@@ -77,17 +77,17 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1 }}
-              className="w-full flex flex-row gap-4 justify-center md:justify-start"
+              className="w-full flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start items-center md:items-start"
             >
               <Link
                 href="/get-involved"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-sky-500 text-white font-semibold shadow-lg hover:from-sky-500 hover:to-emerald-500 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-emerald-500 to-sky-500 text-white font-semibold shadow-lg hover:from-sky-500 hover:to-emerald-500 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400 text-sm sm:text-base"
               >
                 Join BIIN <FiArrowRight size={22} />
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-emerald-400 text-emerald-300 font-semibold hover:bg-emerald-400 hover:text-white transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full border-2 border-emerald-400 text-emerald-300 font-semibold hover:bg-emerald-400 hover:text-white transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400 text-sm sm:text-base"
               >
                 Learn More
               </Link>
@@ -116,7 +116,7 @@ const Hero = () => {
       </div>
       {/* Stats Card */}
       <div className="relative z-20 flex justify-center -mb-16">
-        <div className="w-11/12 max-w-4xl grid grid-cols-3 gap-3 sm:gap-6 bg-white/90 backdrop-blur-md shadow-2xl rounded-2xl py-5 sm:py-7 px-3 sm:px-8">
+        <div className="w-11/12 max-w-4xl grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 bg-white/90 backdrop-blur-md shadow-2xl rounded-2xl py-5 sm:py-7 px-3 sm:px-8">
           {stats.map((stat, idx) => (
             <div
               key={stat.label}
