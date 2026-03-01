@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { BsMenuButtonWideFill, BsFillBackspaceFill } from "react-icons/bs";
 import { BiChevronDown } from "react-icons/bi";
 import Link from "next/link";
-import logo from "../../../public/BIIN-Logo.png";
+import logo from "../../../public/BIIN Logo-1.png";
 import Image from "next/image";
 
 const navLinks = [
