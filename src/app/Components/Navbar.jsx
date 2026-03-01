@@ -52,7 +52,7 @@ export const Navbar = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <ul className="hidden md:flex items-center gap-2 lg:gap-6 font-semibold">
+          <ul className="hidden lg:flex items-center gap-1 xl:gap-4 font-semibold">
             {navLinks.map((link, idx) =>
               link.dropdown ? (
                 <li key={link.name} className="relative group">
@@ -95,10 +95,10 @@ export const Navbar = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className={`px-3 py-2 rounded-lg text-sm transition ${
+                    className={`px-3 py-1.5 rounded-full text-sm transition-all duration-200 ${
                       pathname === link.href
-                        ? "text-emerald-600 font-extrabold bg-emerald-50 border-b-4 border-emerald-500 shadow-sm"
-                        : "text-black hover:bg-white/10 hover:text-teal-300"
+                        ? "text-white font-bold bg-indigo-900 border border-indigo-700 shadow-sm"
+                        : "text-gray-700 hover:text-white hover:bg-indigo-900/80"
                     }`}
                   >
                     {link.name}
@@ -112,7 +112,7 @@ export const Navbar = () => {
           <button
             onClick={() => setIsOpen((v) => !v)}
             aria-label="Open menu"
-            className="md:hidden p-2 rounded-lg bg-white/10 hover:bg-white/20 transition"
+            className="lg:hidden p-2 rounded-lg bg-white/10 hover:bg-white/20 transition"
           >
             {!isOpen ? (
                   <BsMenuButtonWideFill size={28} color="#000" />
@@ -125,13 +125,13 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-full bg-black/60 z-40 transition-all duration-300 ${
+        className={`lg:hidden fixed top-0 left-0 w-full h-full bg-black/60 z-40 transition-all duration-300 ${
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setIsOpen(false)}
       ></div>
       <aside
-        className={`md:hidden fixed top-0 right-0 w-4/5 max-w-xs h-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ${
+        className={`lg:hidden fixed top-0 right-0 w-4/5 max-w-xs h-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -212,8 +212,8 @@ export const Navbar = () => {
                     href={link.href}
                     className={`block px-3 py-2 rounded-lg font-medium text-base transition ${
                       pathname === link.href
-                        ? "bg-emerald-100 text-emerald-700 font-extrabold border-l-4 border-emerald-600 shadow-sm"
-                        : "text-gray-800 hover:bg-teal-50 hover:text-teal-700"
+                        ? "bg-indigo-50 text-indigo-900 font-bold border-l-4 border-indigo-800"
+                        : "text-gray-800 hover:bg-indigo-50/40 hover:text-indigo-900"
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
