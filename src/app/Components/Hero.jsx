@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import hero from "../../../public/Biin_Web_Image.png";
+import hero from "../../../public/BIIN Profile Image/Biin_Web_Image.png";
 import biinLogo from "../../../public/BIIN_Logo.png";
-import biin from "../../../public/BIIN_Logo_White.png";
+import biin from "../../../public/BIIN Profile Image/Biin_Logo_White.png";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -43,7 +43,7 @@ const Hero = () => {
       <div className="relative z-10">
         <div className="w-11/12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.15fr] items-end md:items-end md:gap-x-14 lg:gap-x-20 xl:gap-x-24">
           {/* Left: Text */}
-          <div className="flex flex-col items-center md:items-start pt-4 sm:pt-6 md:pt-4 lg:pt-6 pb-8 md:pb-12 relative z-20 md:-ml-6 lg:-ml-10 -mt-8 sm:-mt-10 md:-mt-14 lg:-mt-16">
+          <div className="flex flex-col items-center md:items-start pt-4 sm:pt-6 md:pt-4 lg:pt-6 pb-8 md:pb-12 relative z-20 md:-ml-6 lg:-ml-10">
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -119,7 +119,7 @@ const Hero = () => {
             initial={{ x: 80, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.2, type: "spring" }}
-            className="relative flex justify-center md:justify-end items-end self-end md:translate-x-10 lg:translate-x-16"
+            className="relative flex justify-center md:justify-end items-end self-end"
           >
             <div className="relative w-full md:w-[115%] lg:w-[125%] md:-mr-14 lg:-mr-28 mb-8 md:mb-10 lg:mb-12">
               <Image
