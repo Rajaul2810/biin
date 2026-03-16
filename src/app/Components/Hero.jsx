@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import hero from "../../../public/Biin Web Image.png";
-import biinLogo from "../../../public/BIIN Logo-1.png";
-import biin from "../../../public/BIIN Logo (White).png";
+import hero from "../../../public/Biin_Web_Image.png";
+import biinLogo from "../../../public/BIIN_Logo.png";
+import biin from "../../../public/BIIN_Logo_White.png";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
