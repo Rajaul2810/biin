@@ -9,7 +9,7 @@ import logo from '../../../public/BIIN Logo-1.png'
 
 const Footer = () => {
     return (
-      <footer className="bg-black">
+      <footer className="bg-gradient-to-r from-[#145e5a] to-[#152a6e]">
         <div className="max-w-7xl w-11/12 md:w-10/12 lg:w-3/4 mx-auto grid gap-8 sm:gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 pt-8 pb-4">
           <div className="mb-5 md:col-span-1 md:max-w-[220px]">
             <Image
@@ -19,7 +19,7 @@ const Footer = () => {
               height={100}
               className="object-contain"
             />
-            <p className="text-gray-400">
+            <p className="text-gray-200">
               Welcome to Empowering Youth through IT Skill Development and
               innovative community.
             </p>
@@ -30,7 +30,7 @@ const Footer = () => {
                     href="https://www.facebook.com/BIINtrust"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-gray-300"
+                    className="text-gray-200 hover:text-white"
                   >
                     <FaFacebook size={20} />
                   </a>
@@ -40,7 +40,7 @@ const Footer = () => {
                     href=""
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-gray-300"
+                    className="text-gray-200 hover:text-white"
                   >
                     <FaTwitter size={20} />
                   </Link>
@@ -50,7 +50,7 @@ const Footer = () => {
                     href=""
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-gray-300"
+                    className="text-gray-200 hover:text-white"
                   >
                     <FaInstagram size={20} />
                   </Link>
@@ -62,31 +62,31 @@ const Footer = () => {
             <h2 className="text-white text-lg font-semibold pb-3">Explore</h2>
             <div className="flex flex-col gap-2.5">
               <Link href="/faq">
-                <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center gap-1">
+                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
                   <FiChevronsRight />
                   FAQ
                 </p>
               </Link>
               <Link href="/about">
-                <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center gap-1">
+                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
                   <FiChevronsRight />
                   About Us
                 </p>
               </Link>
               <Link href="/contact">
-                <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center gap-1">
+                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
                   <FiChevronsRight />
                   Contact Us
                 </p>
               </Link>
               <Link href="#">
-                <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center gap-1">
+                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
                   <FiChevronsRight />
                   Video Tour
                 </p>
               </Link>
               <Link href="#">
-                <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center gap-1">
+                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
                   <FiChevronsRight />
                   Our Team
                 </p>
@@ -99,25 +99,25 @@ const Footer = () => {
             </h2>
             <div className="flex flex-col gap-2.5">
               <Link href="#">
-                <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center gap-1">
+                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
                   <FiChevronsRight />
                   Join Us
                 </p>
               </Link>
               <Link href="/events">
-                <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center gap-1">
+                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
                   <FiChevronsRight />
                   Events
                 </p>
               </Link>
               <Link href="/partner">
-                <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center gap-1">
+                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
                   <FiChevronsRight />
                   Our Partners
                 </p>
               </Link>
               <Link href="#">
-                <p className="text-gray-400 text-sm hover:text-gray-300 flex items-center gap-1">
+                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
                   <FiChevronsRight />
                   Tech Venture
                 </p>
@@ -128,16 +128,16 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
             <div>
-              <p className="text-gray-400 text-sm text-center">
-                <a href="#" className=" underline hover:text-white">
+              <p className="text-gray-200 text-sm text-center">
+                <a href="#" className="  hover:text-white">
                   Terms of use
                 </a>{" "}
                 |{" "}
-                <a href="#" className=" underline hover:text-white">
+                <a href="#" className="  hover:text-white">
                   Privacy Policy
                 </a>
               </p>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-200 text-sm">
                 &copy; {new Date().getFullYear()} Bangladesh ICT &
                 Innovation Network (BIIN)
               </p>
