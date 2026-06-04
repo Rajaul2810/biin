@@ -2,7 +2,6 @@
 // Membership Component - BIIN
 import React from "react";
 import { motion } from "framer-motion";
-import { FaUserGraduate, FaUsers, FaBuilding, FaHandshake, FaCrown, FaUserTie } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 
 const membershipCategories = [
@@ -10,7 +9,6 @@ const membershipCategories = [
     id: 2,
     title: "Youth Member",
     subtitle: "For Young Innovators, Entrepreneurs & Change-Makers (Age 21–42)",
-    icon: <FaUserGraduate className="text-blue-500" size={32} />,
     description: "•\tCareer Guidance.\n•\tIndustry Certifications\n•\tExclusive Learning Resources.",
     requirements: "National ID, profile photo, contact info, occupation/startup details.",
     color: "from-blue-500 to-cyan-500",
@@ -34,7 +32,6 @@ const membershipCategories = [
     id: 1,
     title: "Institutional Member",
     subtitle: "For Organizations Committed to Digital Development",
-    icon: <FaBuilding className="text-purple-500" size={32} />,
     description: "•\tBrand Exposure.\n•\tTop-Tier Recruitment.\n•\tStrategic Partnership.",
     requirements: "Company/NGO registration, logo, authorized representative info.",
     color: "from-purple-500 to-indigo-500",
@@ -71,12 +68,11 @@ const membershipCategories = [
     id: 3,
     title: "General Member",
     subtitle: "For Citizens Committed to ICT Development & Social Change",
-    icon: <FaUserTie className="text-indigo-500" size={32} />,
     description: "•\tBe an Advisor.\n•\tProfessional Influence\n•\tRecognition.",
     requirements: "Full name, contact details, occupation, national ID, photo.",
-    color: "from-indigo-500 to-purple-500",
-    bgColor: "bg-indigo-50",
-    borderColor: "border-indigo-200"
+    color: "from-amber-500 to-orange-500",
+    bgColor: "bg-amber-50",
+    borderColor: "border-amber-200"
   }
 ];
 
@@ -108,8 +104,8 @@ const Membership = () => {
               className={`${category.bgColor} ${category.borderColor} border-2 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105`}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className={`p-3 rounded-full bg-gradient-to-r ${category.color} text-white`}>
-                  {category.icon}
+                <div className={`p-3 rounded-full bg-gradient-to-r ${category.color}`}>
+                  <span className="block h-8 w-8" aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-800">{category.title}</h3>

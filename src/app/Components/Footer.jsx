@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { FiChevronsRight } from 'react-icons/fi';
 import logo from '../../../public/BIIN Logo-1.png'
+import biin from "../../../public/BIIN Profile Image/Biin_Logo_White.png";
 
 const Footer = () => {
     return (
@@ -13,13 +14,13 @@ const Footer = () => {
         <div className="max-w-7xl w-11/12 md:w-10/12 lg:w-3/4 mx-auto grid gap-8 sm:gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 pt-8 pb-4">
           <div className="mb-5 md:col-span-1 md:max-w-[220px]">
             <Image
-              src={logo}
+              src={biin}
               alt="logo"
               width={100}
               height={100}
               className="object-contain"
             />
-            <p className="text-gray-200">
+            <p className="text-gray-200 mt-3">
               Welcome to Empowering Youth through IT Skill Development and
               innovative community.
             </p>
