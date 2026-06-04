@@ -8,14 +8,14 @@ const trustees = [
   {
     name: "Syed Almas Kabir",
     role: "Chairman, Board of Trustees",
-    image: "/almas.jpg",
+    image: "",
     description: "Renowned ICT industry leader and policy advocate, Mr. Kabir serves as the Chairman of BIIN. With over three decades of experience in technology, entrepreneurship and public policy, he leads the strategic direction of the organization and oversees governance as a Founder Trustee.",
     quote: "Technology is the bridge between dreams and reality for our youth."
   },
   {
     name: "Moon M. Rajib",
     role: "General Secretary & Founder Trustee",
-    image: "/moon.jpg",
+    image: "",
     description: "As the Founder and General Secretary of BIIN, Mr. Rajib drives the organization's vision, program development, and national outreach. With a strong background in communication, branding, and youth engagement, he plays a key role in managing BIIN's day-to-day operations and partnerships.",
     quote: "Empowering youth through innovation is not just our mission, it's our passion."
   }

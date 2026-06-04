@@ -1,4 +1,7 @@
 // Events Data for BIIN
+
+import book from "../../../public/BIIN Profile Image/book_image.jpeg"
+
 export const eventsData = [
   {
     id: 1,
@@ -83,7 +86,7 @@ This initiative showcased BIIN's commitment to social responsibility and youth w
     slug: "book-july-revolution-2024",
     title: "Book on BIIN's Role in the July Revolution",
     date: "August 11, 2024",
-    image: "/BIIN Profile Image/Book on BIIN's Role in the July Revolution (August 11, 2024).jpg",
+    image: book,
     shortDescription: "A book chronicling the heroic contributions of BIIN members during the July Revolution in Bangladesh.",
     fullDescription: `BIIN's editorial team is finalizing a book that chronicles the heroic contributions of BIIN members during the July Revolution in Bangladesh.
 
