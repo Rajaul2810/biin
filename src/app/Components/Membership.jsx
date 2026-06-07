@@ -90,7 +90,9 @@ const Membership = () => {
             BIIN Membership Categories
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Join the Bangladesh ICT & Innovation Network (BIIN) and become part of a movement that&apos;s digitally transforming Bangladesh through youth empowerment, education, innovation, and collaboration.
+            Join the Bangladesh ICT & Innovation Network (BIIN) and become part
+            of a movement that&apos;s digitally transforming Bangladesh through
+            youth empowerment, education, innovation, and collaboration.
           </p>
         </motion.div>
 
@@ -104,11 +106,15 @@ const Membership = () => {
               className={`${category.bgColor} ${category.borderColor} border-2 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105`}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className={`p-3 rounded-full bg-gradient-to-r ${category.color}`}>
+                <div
+                  className={`p-3 rounded-full bg-gradient-to-r ${category.color}`}
+                >
                   <span className="block h-8 w-8" aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800">{category.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-800">
+                    {category.title}
+                  </h3>
                   <p className="text-sm text-gray-600">{category.subtitle}</p>
                 </div>
               </div>
@@ -118,13 +124,22 @@ const Membership = () => {
               </p>
 
               <div className="bg-white/50 rounded-lg p-3 mb-4">
-                <h4 className="font-semibold text-gray-800 mb-2 text-sm">Requirements:</h4>
-                <p className="text-xs text-gray-600 leading-relaxed">{category.requirements}</p>
+                <h4 className="font-semibold text-gray-800 mb-2 text-sm">
+                  Requirements:
+                </h4>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  {category.requirements}
+                </p>
               </div>
 
-              <button className="w-full bg-gradient-to-r from-emerald-500 to-sky-500 text-white font-semibold py-2 px-4 rounded-lg hover:from-sky-500 hover:to-emerald-500 transition-all duration-200 flex items-center justify-center gap-2">
+              <a
+                href="https://forms.gle/n7WL1FmbqpqrREz7A"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-gradient-to-r from-emerald-500 to-sky-500 text-white font-semibold py-2 px-4 rounded-lg hover:from-sky-500 hover:to-emerald-500 transition-all duration-200 flex items-center justify-center gap-2 inline-block text-center"
+              >
                 Apply Now <BsArrowRight size={16} />
-              </button>
+              </a>
             </motion.div>
           ))}
         </div>
@@ -136,12 +151,16 @@ const Membership = () => {
           className="mt-12 text-center"
         >
           <div className="bg-gradient-to-r from-emerald-500 to-sky-500 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">🔄 Membership Upgrade & Conversion</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              🔄 Membership Upgrade & Conversion
+            </h3>
             <p className="text-lg mb-6">
-              Members may upgrade or transition from one category to another (e.g., Youth Member to Life Member) with applicable discounts on registration or renewal fees.
+              Members may upgrade or transition from one category to another
+              (e.g., Youth Member to Life Member) with applicable discounts on
+              registration or renewal fees.
             </p>
             <a
-              // href="https://forms.gle/pocQfGR3gBVScM2L9"
+               href="https://forms.gle/n7WL1FmbqpqrREz7A"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white text-emerald-600 font-semibold rounded-full hover:bg-gray-100 transition-all duration-200"
