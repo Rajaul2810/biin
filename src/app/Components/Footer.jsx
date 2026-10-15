@@ -1,152 +1,130 @@
-// components/Footer.js
-// Footer Component - BIIN
-"use client"
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
-import { FiChevronsRight } from 'react-icons/fi';
-import logo from '../../../public/BIIN Logo-1.png'
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { FaFacebook } from "react-icons/fa";
+import {
+  HiOutlineEnvelope,
+  HiOutlinePhone,
+  HiOutlineMapPin,
+} from "react-icons/hi2";
 import biin from "../../../public/BIIN Profile Image/Biin_Logo_White.png";
 
+const exploreLinks = [
+  { name: "About Us", href: "/about" },
+  { name: "Events", href: "/events" },
+  { name: "Get Involved", href: "/get-involved" },
+  { name: "Partners", href: "/partner" },
+  { name: "FAQ", href: "/faq" },
+  { name: "Contact", href: "/contact" },
+];
+
 const Footer = () => {
-    return (
-      <footer className="bg-gradient-to-r from-[#145e5a] to-[#152a6e]">
-        <div className="max-w-7xl w-11/12 md:w-10/12 lg:w-3/4 mx-auto grid gap-8 sm:gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 pt-8 pb-4">
-          <div className="mb-5 md:col-span-1 md:max-w-[220px]">
+  return (
+    <footer className="bg-slate-900 text-slate-300">
+      <div className="max-w-7xl mx-auto px-4 pt-12 sm:pt-14 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Image
               src={biin}
-              alt="logo"
-              width={100}
-              height={100}
-              className="object-contain"
+              alt="BIIN"
+              width={140}
+              height={90}
+              className="object-contain w-[120px] sm:w-[140px] h-auto"
             />
-            <p className="text-gray-200 mt-3">
-              Welcome to Empowering Youth through IT Skill Development and
-              innovative community.
+            <p className="mt-4 text-sm leading-relaxed text-slate-400 max-w-xs">
+              Empowering youth through ICT skill development, innovation, and
+              community collaboration across Bangladesh.
             </p>
-            <div className="mt-4">
-              <ul className="flex space-x-4">
-                <li>
-                  <a
-                    href="https://www.facebook.com/BIINtrust"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-200 hover:text-white"
-                  >
-                    <FaFacebook size={20} />
-                  </a>
-                </li>
-                <li>
-                  <Link
-                    href=""
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-200 hover:text-white"
-                  >
-                    <FaTwitter size={20} />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href=""
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-200 hover:text-white"
-                  >
-                    <FaInstagram size={20} />
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <a
+              href="https://www.facebook.com/BIINtrust"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="BIIN on Facebook"
+              className="mt-5 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 text-slate-300 hover:bg-emerald-500/20 hover:text-emerald-300 hover:ring-emerald-400/30 transition"
+            >
+              <FaFacebook size={18} />
+            </a>
           </div>
-          <div className="mb-5 md:pl-20 lg:pl-28">
-            <h2 className="text-white text-lg font-semibold pb-3">Explore</h2>
-            <div className="flex flex-col gap-2.5">
-              <Link href="/faq">
-                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
-                  <FiChevronsRight />
-                  FAQ
-                </p>
-              </Link>
-              <Link href="/about">
-                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
-                  <FiChevronsRight />
-                  About Us
-                </p>
-              </Link>
-              <Link href="/contact">
-                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
-                  <FiChevronsRight />
-                  Contact Us
-                </p>
-              </Link>
-              <Link href="#">
-                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
-                  <FiChevronsRight />
-                  Video Tour
-                </p>
-              </Link>
-              <Link href="#">
-                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
-                  <FiChevronsRight />
-                  Our Team
-                </p>
-              </Link>
-            </div>
-          </div>
-          <div className="mb-5 md:pl-20 lg:pl-28">
-            <h2 className="text-white text-lg font-semibold pb-3">
-              Quick Link
+
+          <div>
+            <h2 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
+              Explore
             </h2>
-            <div className="flex flex-col gap-2.5">
-              <Link href="#">
-                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
-                  <FiChevronsRight />
-                  Join Us
-                </p>
-              </Link>
-              <Link href="/events">
-                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
-                  <FiChevronsRight />
-                  Events
-                </p>
-              </Link>
-              <Link href="/partner">
-                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
-                  <FiChevronsRight />
-                  Our Partners
-                </p>
-              </Link>
-              <Link href="#">
-                <p className="text-gray-200 text-sm hover:text-white flex items-center gap-1">
-                  <FiChevronsRight />
-                  Tech Venture
-                </p>
-              </Link>
-            </div>
+            <ul className="space-y-2.5">
+              {exploreLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-slate-400 hover:text-emerald-300 transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-        <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center">
-            <div>
-              <p className="text-gray-200 text-sm text-center">
-                <a href="#" className="  hover:text-white">
-                  Terms of use
-                </a>{" "}
-                |{" "}
-                <a href="#" className="  hover:text-white">
-                  Privacy Policy
+
+          <div className="sm:col-span-2 lg:col-span-2">
+            <h2 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
+              Contact
+            </h2>
+            <ul className="space-y-3.5">
+              <li className="flex items-start gap-3 text-sm">
+                <HiOutlineMapPin
+                  size={18}
+                  className="mt-0.5 shrink-0 text-emerald-400"
+                />
+                <span className="text-slate-400 leading-relaxed">
+                  SimpleTree Attalika (Level 19), 134 Gulshan Avenue, Dhaka
+                  1212, Bangladesh
+                </span>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@biin.org.bd"
+                  className="flex items-center gap-3 text-sm text-slate-400 hover:text-emerald-300 transition-colors"
+                >
+                  <HiOutlineEnvelope
+                    size={18}
+                    className="shrink-0 text-emerald-400"
+                  />
+                  info@biin.org.bd
                 </a>
-              </p>
-              <p className="text-gray-200 text-sm">
-                &copy; {new Date().getFullYear()} Bangladesh ICT &
-                Innovation Network (BIIN)
-              </p>
-            </div>
+              </li>
+              <li>
+                <a
+                  href="tel:+8809640123701"
+                  className="flex items-center gap-3 text-sm text-slate-400 hover:text-emerald-300 transition-colors"
+                >
+                  <HiOutlinePhone
+                    size={18}
+                    className="shrink-0 text-emerald-400"
+                  />
+                  +88 09640 123 701-3
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </footer>
-    );
+
+        <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs sm:text-sm text-slate-500 text-center sm:text-left">
+            &copy; {new Date().getFullYear()} Bangladesh ICT & Innovation
+            Network (BIIN)
+          </p>
+          <p className="text-xs sm:text-sm text-slate-500">
+            <span className="hover:text-slate-300 transition-colors cursor-default">
+              Terms of use
+            </span>
+            <span className="mx-2 text-slate-600">|</span>
+            <span className="hover:text-slate-300 transition-colors cursor-default">
+              Privacy Policy
+            </span>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

@@ -1,86 +1,159 @@
-"use client"
-import React from 'react'
-import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi'
-import { motion } from 'framer-motion'
+"use client";
+import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+    HiOutlineMapPin,
+    HiOutlineEnvelope,
+    HiOutlinePhone,
+    HiOutlineArrowRight,
+} from "react-icons/hi2";
+
+const contactItems = [
+    {
+        icon: HiOutlineMapPin,
+        label: "Our Address",
+        content:
+            "SimpleTree Attalika (Level 19), 134 Gulshan Avenue, Dhaka 1212, Bangladesh",
+        href: "https://maps.google.com/?q=SimpleTree+Attalika+134+Gulshan+Avenue+Dhaka",
+        external: true,
+        iconBg: "bg-sky-100 text-sky-600",
+        bar: "bg-sky-500",
+    },
+    {
+        icon: HiOutlineEnvelope,
+        label: "Our Email",
+        content: "info@biin.org.bd",
+        href: "mailto:info@biin.org.bd",
+        iconBg: "bg-emerald-100 text-emerald-600",
+        bar: "bg-emerald-500",
+    },
+    {
+        icon: HiOutlinePhone,
+        label: "Our Phone",
+        content: "+88 09640 123 701-3",
+        href: "tel:+8809640123701",
+        iconBg: "bg-indigo-100 text-indigo-600",
+        bar: "bg-indigo-500",
+    },
+];
 
 const Contact = () => {
     return (
-        <section className='bg-white'>
-            <div className='flex justify-center items-center py-12 md:min-h-screen px-3 sm:px-5'>
-                <div className='w-11/12 md:w-3/4 grid grid-cols-1 md:grid-cols-2 place-items-center gap-8'>
-                    <motion.div
-                        initial={{ x: -50, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 0.8 }}
-                        className='pb-5'
-                    >
-                        <h1 className='text-4xl font-extrabold text-black mb-4'>Contact Us</h1>
-                        <p className='text-lg pb-5 pt-2 text-gray-600'>Ready to build your future with BIIN? Get in touch with us today.</p>
-                        
-                        <div className='mb-4 flex p-4 shadow-lg rounded-lg hover:shadow-xl transition-shadow'>
-                            <div className='bg-gradient-to-r from-emerald-600 to-teal-500 p-3 w-12 h-12 rounded-full shadow-lg flex items-center justify-center'>
-                                <FiMapPin color='white' size={20} />
-                            </div>
-                            <div className='ms-4 text-gray-600'>
-                                <p className='font-bold text-black text-lg'>Our Address:</p>
-                                <p className='text-sm'>SimpleTree Attalika (Level 19), 134 Gulshan Avenue, Dhaka 1212 Bangladesh</p>
-                            </div>
-                        </div>
-                        
-                        <div className='mb-4 flex p-4 shadow-lg rounded-lg hover:shadow-xl transition-shadow'>
-                            <div className='bg-gradient-to-r from-emerald-600 to-teal-500 p-3 w-12 h-12 rounded-full shadow-lg flex items-center justify-center'>
-                                <FiMail color='white' size={20} />
-                            </div>
-                            <div className='ms-4 text-gray-600'>
-                                <p className='font-bold text-black text-lg'>Our Email:</p>
-                                <a href='mailto:info@biin.org.bd' className='text-sm text-emerald-600 hover:text-emerald-800 transition-colors'>info@biin.org.bd</a>
-                            </div>
-                        </div>
-                        
-                        <div className='mb-4 flex p-4 shadow-lg rounded-lg hover:shadow-xl transition-shadow'>
-                            <div className='bg-gradient-to-r from-emerald-600 to-teal-500 p-3 w-12 h-12 rounded-full shadow-lg flex items-center justify-center'>
-                                <FiPhone color='white' size={20} />
-                            </div>
-                            <div className='ms-4 text-gray-600'>
-                                <p className='font-bold text-black text-lg'>Our Phone:</p>
-                                <a href='tel:096401237013' className='text-sm text-emerald-600 hover:text-emerald-800 transition-colors'>09640123701-3</a>
-                            </div>
-                        </div>
+        <section className="py-14 sm:py-16 bg-gradient-to-br from-slate-50 to-gray-100">
+            <div className="max-w-7xl mx-auto px-4">
+                <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-10 sm:mb-14"
+                >
+                    <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600 mb-2">
+                        Get In Touch
+                    </p>
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+                        Contact Us
+                    </h1>
+                    <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                        Ready to build your future with BIIN? Reach out — we&apos;d love to
+                        hear from you.
+                    </p>
+                </motion.div>
 
-                        <div className="mt-8 p-6 bg-gradient-to-r from-emerald-50 to-sky-50 rounded-xl border border-emerald-200 hidden">
-                            <h3 className="font-bold text-gray-800 mb-3">Quick Links for Search Engines</h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
-                                <a href="#" className="text-emerald-600 hover:text-emerald-800 transition-colors">• ICT Skills for Youth Bangladesh</a>
-                                <a href="#" className="text-emerald-600 hover:text-emerald-800 transition-colors">• Best Digital Literacy Programs in Bangladesh</a>
-                                <a href="#" className="text-emerald-600 hover:text-emerald-800 transition-colors">• Startup Incubation for Students</a>
-                                <a href="#" className="text-emerald-600 hover:text-emerald-800 transition-colors">• Campus IT Clubs in Bangladesh</a>
-                                <a href="#" className="text-emerald-600 hover:text-emerald-800 transition-colors">• Hackathon & Coding Contests BD</a>
-                                <a href="#" className="text-emerald-600 hover:text-emerald-800 transition-colors">• Free IT Courses for Students BD</a>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+                    <div className="flex flex-col gap-4 sm:gap-5">
+                        {contactItems.map((item, index) => {
+                            const Icon = item.icon;
+                            const Wrapper = item.href ? "a" : "div";
+                            const linkProps = item.href
+                                ? {
+                                    href: item.href,
+                                    ...(item.external
+                                        ? { target: "_blank", rel: "noopener noreferrer" }
+                                        : {}),
+                                }
+                                : {};
+
+                            return (
+                                <motion.div
+                                    key={item.label}
+                                    initial={{ y: 24, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{ delay: index * 0.08, duration: 0.45 }}
+                                >
+                                    <Wrapper
+                                        {...linkProps}
+                                        className="group flex overflow-hidden rounded-2xl bg-white ring-1 ring-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
+                                    >
+                                        <div className={`w-1.5 shrink-0 ${item.bar}`} />
+                                        <div className="flex flex-1 items-start gap-4 p-4 sm:p-5">
+                                            <div
+                                                className={`shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-xl ${item.iconBg} transition-transform duration-300 group-hover:scale-110`}
+                                            >
+                                                <Icon size={22} aria-hidden="true" />
+                                            </div>
+                                            <div className="min-w-0">
+                                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">
+                                                    {item.label}
+                                                </p>
+                                                <p className="text-sm sm:text-base font-medium text-slate-800 leading-relaxed group-hover:text-emerald-700 transition-colors">
+                                                    {item.content}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </Wrapper>
+                                </motion.div>
+                            );
+                        })}
+
+                        <motion.div
+                            initial={{ y: 24, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.3, duration: 0.45 }}
+                            className="relative overflow-hidden rounded-2xl bg-slate-900 p-6 sm:p-7 text-white"
+                        >
+                            <div className="pointer-events-none absolute -top-12 -right-10 h-36 w-36 rounded-full bg-emerald-500/30 blur-3xl" />
+                            <div className="pointer-events-none absolute -bottom-14 -left-8 h-36 w-36 rounded-full bg-sky-500/25 blur-3xl" />
+                            <div className="relative z-10">
+                                <h2 className="text-lg sm:text-xl font-bold mb-2">
+                                    Want to join BIIN?
+                                </h2>
+                                <p className="text-sm text-slate-300 mb-5 leading-relaxed">
+                                    Explore membership categories and register in a few steps.
+                                </p>
+                                <Link
+                                    href="/get-involved"
+                                    className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 hover:bg-emerald-50 transition-colors"
+                                >
+                                    Get Involved <HiOutlineArrowRight size={16} />
+                                </Link>
                             </div>
-                        </div>
-                    </motion.div>
-                    
+                        </motion.div>
+                    </div>
+
                     <motion.div
-                        initial={{ x: 50, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className='p-1 w-full shadow-lg rounded-xl overflow-hidden'
+                        initial={{ y: 24, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.55, delay: 0.15 }}
+                        className="overflow-hidden rounded-2xl bg-white ring-1 ring-slate-100 shadow-sm min-h-[280px] sm:min-h-[420px] lg:min-h-full"
                     >
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14604.462637537881!2d90.39441832949385!3d23.778895394671153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c77094eace8b%3A0x1cd8c2d9239b6cb7!2sMohakhali%2C%20Dhaka%201212!5e0!3m2!1sen!2sbd!4v1691230330521!5m2!1sen!2sbd" 
-                            width="100%" 
-                            height="300"
-                            style={{ border: 0 }} 
-                            allowFullScreen="" 
-                            loading="lazy" 
-                            referrerPolicy="no-referrer-when-downgrade"
-                            className="rounded-xl sm:h-[500px]"
-                        ></iframe>
+                
+                        <iframe
+                          title="BIIN office location map"
+                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.096571224716!2d90.41303677533722!3d23.79256537864164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7a6b323ab89%3A0x4bf6a21d4ae0ca7d!2sSimpleTree%20Attalika!5e1!3m2!1sen!2sbd!4v1784023343573!5m2!1sen!2sbd" 
+                         width="100%"
+                         height="100%"
+                         style={{ border: 0, minHeight: "420px" }}
+                         allowFullScreen
+                         loading="lazy"
+                         referrerPolicy="no-referrer-when-downgrade"
+                         className="h-full w-full min-h-[280px] sm:min-h-[420px]"
+                         />
                     </motion.div>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Contact
+export default Contact;

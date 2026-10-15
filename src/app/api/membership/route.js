@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 
 const VALID_CATEGORIES = [
-  "Donor Member",
+  "Youth Member",
   "General Member",
   "Institutional Member",
-  "Youth Member",
+  "Donor Member",
 ];
 
 const VALID_INTERESTS = [
@@ -14,6 +14,7 @@ const VALID_INTERESTS = [
   "Research",
   "Mentorship",
   "Skills Training",
+  "Industry-Academia Networking",
 ];
 
 const VALID_DIVISIONS = [
@@ -39,13 +40,24 @@ function validatePhone(phone) {
 export async function POST(request) {
   try {
     const body = await request.json();
+    const email = body.email?.trim();
     const membershipCategory = body.membershipCategory?.trim();
     const name = body.name?.trim();
+    const organization = body.organization?.trim() || "";
+    const address = body.address?.trim() || "";
     const idNumber = body.idNumber?.trim();
-    const email = body.email?.trim();
+    const contactEmail = body.contactEmail?.trim();
     const phone = body.phone?.trim();
     const division = body.division?.trim();
-    const areaOfInterest = body.areaOfInterest?.trim() || "";
+    const areaOfInterest = body.areaOfInterest?.trim();
+    const idFile = body.idFile || null;
+
+    if (!email || !validateEmail(email)) {
+      return NextResponse.json(
+        { error: "A valid email address is required." },
+        { status: 400 }
+      );
+    }
 
     if (!membershipCategory || !VALID_CATEGORIES.includes(membershipCategory)) {
       return NextResponse.json(
@@ -65,9 +77,9 @@ export async function POST(request) {
       );
     }
 
-    if (!email || !validateEmail(email)) {
+    if (!contactEmail || !validateEmail(contactEmail)) {
       return NextResponse.json(
-        { error: "A valid email address is required." },
+        { error: "A valid contact email is required." },
         { status: 400 }
       );
     }
@@ -86,16 +98,34 @@ export async function POST(request) {
       );
     }
 
-    if (areaOfInterest && !VALID_INTERESTS.includes(areaOfInterest)) {
+    if (!areaOfInterest || !VALID_INTERESTS.includes(areaOfInterest)) {
       return NextResponse.json(
         { error: "Please select a valid area of interest." },
         { status: 400 }
       );
     }
 
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbzWcAA4Zhcun1i1WDJfnn6VnInfKYumJA8LO1-WVF7B-kpeJMwf6r404XfmY6IP9wSYIQ/exec";
+    if (idFile) {
+      if (!idFile.name || !idFile.data) {
+        return NextResponse.json(
+          { error: "Invalid ID file upload." },
+          { status: 400 }
+        );
+      }
+      const approxBytes = Math.ceil((idFile.data.length * 3) / 4);
+      if (approxBytes > 1024 * 1024) {
+        return NextResponse.json(
+          { error: "Uploaded file must be 1 MB or smaller." },
+          { status: 400 }
+        );
+      }
+    }
+
+    const scriptUrl =
+      process.env.GOOGLE_APPS_SCRIPT_URL ||
+      "https://script.google.com/macros/s/AKfycbzT8S1bhFNxrv_arjOLqw8bVtrv7j27QJ80ozGKyIe2EEDDXuvwtRJ8f1xhp91OnVzJ/exec";
+
     if (!scriptUrl) {
-      console.error("GOOGLE_APPS_SCRIPT_URL is not configured.");
       return NextResponse.json(
         { error: "Registration service is temporarily unavailable." },
         { status: 503 }
@@ -103,21 +133,23 @@ export async function POST(request) {
     }
 
     const payload = {
+      email,
       membershipCategory,
       name,
+      organization,
+      address,
       idNumber,
-      email,
+      contactEmail,
       phone,
       division,
       areaOfInterest,
+      idFile,
       submittedAt: new Date().toLocaleString("en-BD", {
         timeZone: "Asia/Dhaka",
       }),
+      secret:
+        process.env.GOOGLE_APPS_SCRIPT_SECRET || "biin-registration-form",
     };
-
-    if ("biin-registration-form") {
-      payload.secret ="biin-registration-form";
-    }
 
     const response = await fetch(scriptUrl, {
       method: "POST",

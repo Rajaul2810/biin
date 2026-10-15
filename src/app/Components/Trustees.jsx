@@ -2,117 +2,151 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaQuoteLeft } from "react-icons/fa";
 
-const trustees = [
+const committeeMembers = [
   {
     name: "Syed Almas Kabir",
-    role: "Chairman, Board of Trustees",
-    image: "",
-    description: "Renowned ICT industry leader and policy advocate, Mr. Kabir serves as the Chairman of BIIN. With over three decades of experience in technology, entrepreneurship and public policy, he leads the strategic direction of the organization and oversees governance as a Founder Trustee.",
-    quote: "Technology is the bridge between dreams and reality for our youth."
+    role: "Chairman",
+    image: "/committee/Almas.png",
+  },
+  {
+    name: "Syed Ahsan Habib",
+    role: "EC Member",
+    image: "/committee/habib.png",
+  },
+  {
+    name: "Farzanah Chowdhury",
+    role: "EC Member",
+    image: "/committee/Farzanah.png",
+  },
+  {
+    name: "Joya Kabir",
+    role: "EC Member",
+    image: "/committee/joya.png",
   },
   {
     name: "Moon M. Rajib",
-    role: "General Secretary & Founder Trustee",
-    image: "",
-    description: "As the Founder and General Secretary of BIIN, Mr. Rajib drives the organization's vision, program development, and national outreach. With a strong background in communication, branding, and youth engagement, he plays a key role in managing BIIN's day-to-day operations and partnerships.",
-    quote: "Empowering youth through innovation is not just our mission, it's our passion."
-  }
+    role: "General Secretary",
+    image: "/committee/Rajib.png",
+  },
 ];
+
+const secretariats = [
+  { name: "Tanjin Prity", role: "Manager" },
+  { name: "Mahbub Sharif", role: "PR Officer" },
+  { name: "Mehnaz Chowdhury", role: "Senior Executive, IT" },
+  { name: "Mobarak Hossain Joy", role: "Executive, Event" },
+  { name: "Mohammad Sish", role: "Executive, Design" },
+  { name: "Rajaul Karim", role: "Web Developer" },
+];
+
+const getInitials = (name) =>
+  name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase();
 
 const Trustees = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-slate-100 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
+    <section className="py-14 sm:py-16 bg-gradient-to-br from-slate-50 to-gray-100">
+      <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-10 sm:mb-14"
         >
-          <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-600 text-sm font-semibold rounded-full mb-4">
+          <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600 mb-2">
             Leadership
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-4 tracking-tight">
-            Governance & Trust
+          </p>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+            Executive Committee
           </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            BIIN is governed by a Board of Trustees as per its registered Trust Deed, ensuring all operations, finances, and partnerships are guided by transparency, legality, and accountability.
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            BIIN is governed under a registered Trust Deed, ensuring operations,
+            finances, and partnerships follow transparency and accountability.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-          {trustees.map((trustee, index) => (
-            <motion.div
-              key={trustee.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="group h-full"
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6">
+          {committeeMembers.map((member, index) => (
+            <motion.article
+              key={member.name}
+              initial={{ y: 24, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: index * 0.06, duration: 0.45 }}
+              className="group overflow-hidden rounded-2xl bg-white ring-1 ring-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
             >
-              <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full">
-                <div className="flex flex-col md:flex-row h-full">
-                  {/* Image Section */}
-                  <div className="relative md:w-1/2 aspect-[3/4] md:aspect-auto md:h-96 overflow-hidden">
-                    <Image
-                      src={trustee.image}
-                      alt={trustee.name}
-                      fill
-                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                    {/* Decorative Corner */}
-                    <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-tl-3xl z-20 flex items-center justify-center">
-                      <FaQuoteLeft className="text-white/80" size={20} />
-                    </div>
-                  </div>
-
-                  {/* Content Section */}
-                  <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
-                    <div className="mb-4">
-                      <h3 className="text-2xl font-bold text-gray-800 mb-1 group-hover:text-emerald-600 transition-colors">
-                        {trustee.name}
-                      </h3>
-                      <p className="text-emerald-600 font-semibold text-sm">
-                        {trustee.role}
-                      </p>
-                    </div>
-
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      {trustee.description}
-                    </p>
-
-                    {/* Quote */}
-                    <div className="relative pl-4 border-l-2 border-emerald-500">
-                      <p className="text-gray-500 italic text-sm">
-                        &ldquo;{trustee.quote}&rdquo;
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative aspect-[4/5] bg-slate-100 overflow-hidden">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 33vw, 20vw"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
-            </motion.div>
+              <div className="p-4 text-center">
+                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                  {member.name}
+                </h3>
+                <p className="mt-1 text-sm font-medium text-emerald-600">
+                  {member.role}
+                </p>
+              </div>
+            </motion.article>
           ))}
         </div>
 
-        {/* Trust Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-16 text-center"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.55, delay: 0.2 }}
+          className="mt-14 sm:mt-16 text-center mb-8 sm:mb-10"
         >
-          {/* <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-gray-200 shadow-sm">
-            <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
-            <span className="text-gray-600 text-sm">
-              Registered under the Trust Act, ensuring complete transparency and accountability
-            </span>
-          </div> */}
+          <p className="text-sm font-semibold uppercase tracking-wider text-indigo-600 mb-2">
+            Operations
+          </p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+            BIIN Secretariat
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
+            The team coordinating programs, communications, and day-to-day
+            delivery across BIIN initiatives.
+          </p>
         </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          {secretariats.map((person, index) => (
+            <motion.article
+              key={person.name}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.25 + index * 0.05, duration: 0.4 }}
+              className="flex items-center gap-4 rounded-2xl bg-white ring-1 ring-slate-100 shadow-sm hover:shadow-md hover:ring-indigo-100 p-4 sm:p-5 transition-all duration-300"
+            >
+              <div className="shrink-0 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-100 text-indigo-700 text-sm font-bold">
+                {getInitials(person.name)}
+              </div>
+              <div className="min-w-0">
+                <h3 className="text-sm sm:text-base font-bold text-slate-900 truncate">
+                  {person.name}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+                  {person.role}
+                </p>
+              </div>
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
-export default Trustees; 
+export default Trustees;

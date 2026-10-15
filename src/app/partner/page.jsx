@@ -1,148 +1,92 @@
-'use client'
-import React from 'react'
-import part from '../../../public/partner.png'
-import part1 from '../../../public/partner1.png'
-//import part3 from '../../../public/partner3.png'
-import part4 from '../../../public/partner4.png'
-import part5 from '../../../public/partner5.png'
-import part6 from '../../../public/partner6.png'
-import part7 from '../../../public/partner7.png'
-import Image from 'next/image';
+"use client";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { HiOutlineArrowRight } from "react-icons/hi2";
 
 const partners = [
-  { src: part, alt: 'Partner 1' },
-  { src: part1, alt: 'Partner 2' },
-  //{ src: part3, alt: 'Partner 3' },
-  { src: part4, alt: 'Partner 4' },
-  { src: part5, alt: 'Partner 5' },
-  { src: part6, alt: 'Partner 6' },
-  { src: part7, alt: 'Partner 7' },
+  { src: "/partner.png", alt: "Partner 1" },
+  { src: "/partner1.png", alt: "Partner 2" },
+  { src: "/partner8.png", alt: "Partner 3" },
+  { src: "/partner4.png", alt: "Partner 4" },
+  { src: "/partner5.png", alt: "Partner 5" },
+  { src: "/partner6.png", alt: "Partner 6" },
+  { src: "/partner7.png", alt: "Partner 7" },
+  { src: "/partner9.png", alt: "Partner 8" },
 ];
-
-// Modern, responsive marquee using CSS animation
-const Marquee = ({ children, reverse = false, speed = 30 }) => (
-  <div className="overflow-hidden w-full relative">
-    <div
-      className={`flex gap-8 items-center animate-marquee ${reverse ? 'animate-marquee-reverse' : ''}`}
-      style={{
-        animationDuration: `${speed}s`,
-      }}
-    >
-      {children}
-      {children}
-    </div>
-  </div>
-);
-
-// Add the marquee keyframes to the page (for demo, in production use a CSS file)
-const style = `
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
-}
-@keyframes marquee-reverse {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0%); }
-}
-.animate-marquee {
-  animation: marquee linear infinite;
-  min-width: 200%;
-}
-.animate-marquee-reverse {
-  animation: marquee-reverse linear infinite;
-  min-width: 200%;
-}
-`;
 
 const Partner = () => {
   return (
-    <>
-      <style>{style}</style>
-      <section className="relative py-12 px-3 sm:py-20 sm:px-10 bg-gradient-to-br from-slate-50 via-white to-slate-200 rounded-3xl sm:mx-8 my-8 overflow-hidden">
-        {/* Decorative Blobs */}
-        <div className="absolute -top-24 -left-24 w-56 h-56 sm:w-72 sm:h-72 bg-emerald-400 opacity-20 rounded-full blur-3xl z-0"></div>
-        <div className="absolute -bottom-28 -right-28 w-72 h-72 sm:w-96 sm:h-96 bg-indigo-400 opacity-20 rounded-full blur-3xl z-0"></div>
-        <div className="relative z-10 max-w-4xl sm:max-w-6xl mx-auto">
-          <h2 className="text-center text-4xl sm:text-6xl font-extrabold text-gray-900 mb-3 tracking-tight drop-shadow-lg">
-            <span className="bg-gradient-to-r from-emerald-500 via-indigo-500 to-sky-500 bg-clip-text text-transparent">
-              Our Partners
-            </span>
-          </h2>
-          <p className="text-center text-lg sm:text-xl text-gray-500 mb-8 sm:mb-12 px-2">
-            We proudly collaborate with industry leaders and innovative organizations.
+    <section className="py-14 sm:py-16 bg-gradient-to-br from-slate-50 to-gray-100">
+      <div className="max-w-7xl mx-auto px-4">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-10 sm:mb-14"
+        >
+          <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600 mb-2">
+            Collaboration
           </p>
-          {/* Modern responsive marquee for md+ screens */}
-          <div className="hidden sm:block mb-6">
-            <Marquee speed={30}>
-              {partners.map((partner, idx) => (
-                <div
-                  key={partner.alt}
-                  className="flex items-center my-3 justify-center h-24 w-40 mx-6 bg-white/90 hover:bg-emerald-50 transition-all duration-200 shadow-lg hover:shadow-2xl rounded-xl border border-gray-100 hover:scale-105"
-                  style={{ minWidth: 160 }}
-                >
-                  <Image
-                    src={partner.src}
-                    alt={partner.alt}
-                    className="object-contain"
-                    width={120}
-                    height={72}
-                    sizes="(max-width: 640px) 80px, 120px"
-                    loading={idx < 2 ? "eager" : "lazy"}
-                    priority={idx < 2}
-                    style={{ maxHeight: '72px', maxWidth: '120px', width: 'auto', height: 'auto' }}
-                  />
-                </div>
-              ))}
-            </Marquee>
-          </div>
-          <div className="hidden sm:block">
-            <Marquee reverse speed={36}>
-              {partners.slice().reverse().map((partner, idx) => (
-                <div
-                  key={partner.alt}
-                  className="flex items-center my-3 justify-center h-24 w-40 mx-6 bg-white/90 hover:bg-indigo-50 transition-all duration-200 shadow-lg hover:shadow-2xl rounded-xl border border-gray-100 hover:scale-105"
-                  style={{ minWidth: 160 }}
-                >
-                  <Image
-                    src={partner.src}
-                    alt={partner.alt}
-                    className="object-contain"
-                    width={120}
-                    height={72}
-                    sizes="(max-width: 640px) 80px, 120px"
-                    loading={idx < 2 ? "eager" : "lazy"}
-                    priority={idx < 2}
-                    style={{ maxHeight: '72px', maxWidth: '120px', width: 'auto', height: 'auto' }}
-                  />
-                </div>
-              ))}
-            </Marquee>
-          </div>
-          {/* Responsive grid for mobile */}
-          <div className="grid grid-cols-2 gap-4 sm:hidden mt-6">
-            {partners.map((partner, idx) => (
-              <div
-                key={partner.alt}
-                className="flex items-center justify-center h-20 w-full bg-white/90 hover:bg-emerald-50 transition-all duration-200 shadow rounded-xl border border-gray-100"
-              >
-                <Image
-                  src={partner.src}
-                  alt={partner.alt}
-                  className="object-contain"
-                  width={80}
-                  height={48}
-                  sizes="80px"
-                  loading={idx < 2 ? "eager" : "lazy"}
-                  priority={idx < 2}
-                  style={{ maxHeight: '48px', maxWidth: '80px', width: 'auto', height: 'auto' }}
-                />
-              </div>
-            ))}
-          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+            Our Partners
+          </h1>
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            We proudly collaborate with industry leaders and innovative
+            organizations across Bangladesh.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
+          {partners.map((partner, index) => (
+            <motion.article
+              key={partner.alt}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: index * 0.05, duration: 0.4 }}
+              className="group flex items-center justify-center rounded-2xl bg-white ring-1 ring-slate-100 shadow-sm hover:shadow-lg hover:ring-emerald-100 p-5 sm:p-6 min-h-[110px] sm:min-h-[130px] transition-all duration-300"
+            >
+              <Image
+                src={partner.src}
+                alt={partner.alt}
+                width={140}
+                height={80}
+                className="object-contain max-h-14 sm:max-h-16 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+                sizes="(max-width: 640px) 40vw, (max-width: 1024px) 25vw, 140px"
+                priority={index < 3}
+              />
+            </motion.article>
+          ))}
         </div>
-      </section>
-    </>
+
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.35, duration: 0.5 }}
+          className="mt-12 sm:mt-14 relative overflow-hidden rounded-2xl bg-slate-900 px-6 py-8 sm:px-10 sm:py-10 text-center text-white"
+        >
+          <div className="pointer-events-none absolute -top-16 -right-12 h-44 w-44 rounded-full bg-emerald-500/30 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-16 -left-10 h-44 w-44 rounded-full bg-sky-500/25 blur-3xl" />
+          <div className="relative z-10 max-w-xl mx-auto">
+            <h2 className="text-xl sm:text-2xl font-bold mb-3">
+              Partner with BIIN
+            </h2>
+            <p className="text-sm sm:text-base text-slate-300 mb-6 leading-relaxed">
+              Work with us to empower youth, grow digital skills, and drive
+              innovation nationwide.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 hover:bg-emerald-50 transition-colors"
+            >
+              Become a Partner <HiOutlineArrowRight size={16} />
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
-export default Partner
+export default Partner;

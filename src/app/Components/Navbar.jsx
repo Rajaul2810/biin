@@ -1,184 +1,186 @@
 "use client";
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { BsMenuButtonWideFill, BsFillBackspaceFill } from "react-icons/bs";
+import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
+import { FiExternalLink } from "react-icons/fi";
 import { BiChevronDown } from "react-icons/bi";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import logo from "../../../public/BIIN Logo-1.png";
 import Image from "next/image";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },  { name: "Events", href: "/events" },  { name: "Awards", href: "https://awards.biin.org.bd " },
-  // {
-  //   name: "Governance & Trust",
-  //   href: "/governance-trust",
-  // },
-  {
-    name: "Get Involved",
-    href: "/get-involved",
-  },
+  { name: "About Us", href: "/about" },
+  { name: "Events", href: "/events" },
+  { name: "Awards", href: "https://awards.biin.org.bd", external: true },
+  { name: "Get Involved", href: "/get-involved" },
   { name: "Partner", href: "/partner" },
   { name: "Contact Us", href: "/contact" },
 ];
 
+const isActive = (pathname, href) => {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+};
+
+const linkClass = (active) =>
+  `relative px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+    active
+      ? "text-indigo-900 bg-indigo-50"
+      : "text-gray-700 hover:text-indigo-900 hover:bg-indigo-50/70"
+  }`;
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
-  // For mobile dropdowns
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+    setDropdownOpen(null);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const closeMenu = useCallback(() => setIsOpen(false), []);
+
   const handleDropdown = (idx) => {
     setDropdownOpen(dropdownOpen === idx ? null : idx);
   };
 
+  const renderNavItem = (link, mobile = false) => {
+    if (link.dropdown) {
+      return null;
+    }
+
+    if (link.external) {
+      if (mobile) {
+        return (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMenu}
+            className="flex items-center justify-between px-3 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-indigo-50 hover:text-indigo-900 transition"
+          >
+            {link.name}
+            <FiExternalLink size={16} className="text-gray-400" />
+          </a>
+        );
+      }
+
+      return (
+        <a
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${linkClass(false)} inline-flex items-center gap-1.5`}
+        >
+          {link.name}
+          <FiExternalLink size={12} className="opacity-50" />
+        </a>
+      );
+    }
+
+    const active = isActive(pathname, link.href);
+
+    if (mobile) {
+      return (
+        <Link
+          href={link.href}
+          onClick={closeMenu}
+          className={`block px-3 py-3 rounded-xl text-base font-medium transition ${
+            active
+              ? "bg-indigo-50 text-indigo-900 font-semibold border-l-4 border-indigo-800"
+              : "text-gray-800 hover:bg-indigo-50/70 hover:text-indigo-900"
+          }`}
+        >
+          {link.name}
+        </Link>
+      );
+    }
+
+    return (
+      <Link href={link.href} className={linkClass(active)}>
+        {link.name}
+        {active && (
+          <motion.span
+            layoutId="nav-active"
+            className="absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-indigo-800"
+            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+          />
+        )}
+      </Link>
+    );
+  };
+
   return (
-    <header className="sticky top-0 z-50">
-      <nav
-        className={`w-full border-b border-gray-300 px-4 md:px-10 py-2 transition-all duration-300 bg-white`}
+    <header className="sticky top-0 z-50 w-full">
+      <motion.nav
+        initial={false}
+        animate={{
+          paddingTop: scrolled ? 4 : 8,
+          paddingBottom: scrolled ? 4 : 8,
+        }}
+        transition={{ duration: 0.25 }}
+        className={`w-full border-b border-gray-200 bg-white transition-all duration-300 ${
+          scrolled ? "shadow-md shadow-gray-200/80" : "shadow-sm"
+        }`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between gap-3">
+          <Link
+            href="/"
+            className="flex items-center gap-2 shrink-0 group"
+            aria-label="BIIN home"
+          >
             <Image
               src={logo}
-              alt="logo"
-              height={80}
-              width={100}
-              className="object-contain"
+              alt="BIIN logo"
+              height={scrolled ? 56 : 72}
+              width={scrolled ? 72 : 92}
+              className="object-contain transition-all duration-300 group-hover:scale-[1.03]"
               priority
             />
           </Link>
 
-          {/* Desktop Nav */}
-          <ul className="hidden lg:flex items-center gap-1 xl:gap-4 font-semibold">
+          <ul className="hidden lg:flex items-center gap-0.5 xl:gap-1">
             {navLinks.map((link, idx) =>
               link.dropdown ? (
                 <li key={link.name} className="relative group">
                   <button
-                    className="flex items-center gap-1 px-3 py-2 rounded-lg transition text-black hover:bg-white/10 hover:text-teal-300 focus:outline-none"
-                  >
-                    <span className="text-sm">{link.name}</span>
-                    <BiChevronDown
-                      size={20}
-                      className="transition-transform group-hover:rotate-180"
-                    />
-                  </button>
-                  <ul className="absolute left-0 top-full min-w-[180px] bg-white shadow-xl rounded-xl py-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-40">
-                    {link.dropdown.map((item) =>
-                      item.external ? (
-                        <li key={item.name}>
-                          <a
-                            href={item.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block px-5 py-2 text-gray-700 hover:bg-teal-50 hover:text-teal-600 rounded-lg text-sm transition"
-                          >
-                            {item.name}
-                          </a>
-                        </li>
-                      ) : (
-                        <li key={item.name}>
-                          <Link
-                            href={item.href}
-                            className="block px-5 py-2 text-gray-700 hover:bg-teal-50 hover:text-teal-600 rounded-lg text-sm transition"
-                          >
-                            {item.name}
-                          </Link>
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </li>
-              ) : (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className={`px-3 py-1.5 rounded-full text-sm transition-all duration-200 ${
-                      pathname === link.href
-                        ? "text-white font-bold bg-indigo-900 border border-indigo-700 shadow-sm"
-                        : "text-gray-700 hover:text-white hover:bg-indigo-900/80"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              )
-            )}
-          </ul>
-
-          {/* Mobile Hamburger */}
-          <button
-            onClick={() => setIsOpen((v) => !v)}
-            aria-label="Open menu"
-            className="lg:hidden p-2 rounded-lg bg-white/10 hover:bg-white/20 transition"
-          >
-            {!isOpen ? (
-                  <BsMenuButtonWideFill size={28} color="#000" />
-            ) : (
-              <BsFillBackspaceFill size={28} color="#000" />
-            )}
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Menu */}
-      <div
-        className={`lg:hidden fixed top-0 left-0 w-full h-full bg-black/60 z-40 transition-all duration-300 ${
-          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
-        onClick={() => setIsOpen(false)}
-      ></div>
-      <aside
-        className={`lg:hidden fixed top-0 right-0 w-4/5 max-w-xs h-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex flex-col h-full">
-          <div className="flex items-center justify-between px-4 py-4 border-b">
-            <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2">
-              <Image
-                src={logo}
-                alt="logo"
-                height={44}
-                width={44}
-                className="rounded-full border border-gray-200"
-                priority
-              />
-              <span className="text-lg font-bold bg-gradient-to-r from-black via-emerald-600 to-indigo-700 bg-clip-text text-transparent">
-                BIIN
-              </span>
-            </Link>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="p-2 rounded-lg hover:bg-gray-100 transition"
-              aria-label="Close menu"
-            >
-              <BsFillBackspaceFill size={24} color="#333" />
-            </button>
-          </div>
-          <ul className="flex-1 flex flex-col gap-1 px-4 py-6">
-            {navLinks.map((link, idx) =>
-              link.dropdown ? (
-                <li key={link.name} className="mb-0">
-                  <button
-                    className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-gray-800 hover:bg-teal-50 font-medium text-base transition"
-                    onClick={() => handleDropdown(idx)}
+                    type="button"
+                    className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-indigo-900 hover:bg-indigo-50/70 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+                    aria-expanded="false"
                   >
                     <span>{link.name}</span>
                     <BiChevronDown
-                      size={22}
-                      className={`transition-transform ${
-                        dropdownOpen === idx ? "rotate-180 text-teal-600" : ""
-                      }`}
+                      size={18}
+                      className="transition-transform group-hover:rotate-180"
                     />
                   </button>
-                  <ul
-                    className={`pl-3 mt-0 space-y-1 transition-all duration-200 overflow-hidden ${
-                      dropdownOpen === idx ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                    }`}
-                  >
+                  <ul className="absolute left-0 top-full min-w-[190px] mt-1 bg-white shadow-xl rounded-xl py-2 border border-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-40">
                     {link.dropdown.map((item) =>
                       item.external ? (
                         <li key={item.name}>
@@ -186,8 +188,7 @@ export const Navbar = () => {
                             href={item.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block px-3 py-2 rounded-lg text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 text-sm transition"
-                            onClick={() => setIsOpen(false)}
+                            className="block px-4 py-2.5 text-gray-700 hover:bg-indigo-50 hover:text-indigo-800 rounded-lg text-sm mx-1 transition"
                           >
                             {item.name}
                           </a>
@@ -196,8 +197,7 @@ export const Navbar = () => {
                         <li key={item.name}>
                           <Link
                             href={item.href}
-                            className="block px-3 py-2 rounded-lg text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 text-sm transition"
-                            onClick={() => setIsOpen(false)}
+                            className="block px-4 py-2.5 text-gray-700 hover:bg-indigo-50 hover:text-indigo-800 rounded-lg text-sm mx-1 transition"
                           >
                             {item.name}
                           </Link>
@@ -207,35 +207,165 @@ export const Navbar = () => {
                   </ul>
                 </li>
               ) : (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className={`block px-3 py-2 rounded-lg font-medium text-base transition ${
-                      pathname === link.href
-                        ? "bg-indigo-50 text-indigo-900 font-bold border-l-4 border-indigo-800"
-                        : "text-gray-800 hover:bg-indigo-50/40 hover:text-indigo-900"
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                </li>
+                <li key={link.name}>{renderNavItem(link)}</li>
               )
             )}
           </ul>
-          <div className="px-4 pb-6">
-            <a
-              href="https://forms.gle/tqTmSpieThsCeQFV6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-center py-2 rounded-lg bg-gradient-to-r from-emerald-500 to-sky-500 text-white font-bold shadow hover:from-sky-500 hover:to-emerald-500 transition"
-              onClick={() => setIsOpen(false)}
+
+          <div className="hidden lg:block shrink-0">
+            <Link
+              href="/get-involved"
+              className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-emerald-500 to-sky-500 shadow-md shadow-emerald-500/20 hover:from-sky-500 hover:to-emerald-500 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
             >
               Join Now
-            </a>
+            </Link>
           </div>
+
+          <button
+            type="button"
+            onClick={() => setIsOpen((v) => !v)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            className="lg:hidden p-2.5 rounded-xl bg-white border border-gray-200 shadow-sm hover:border-indigo-200 transition active:scale-95"
+          >
+            {isOpen ? (
+              <HiOutlineX size={24} className="text-gray-800" />
+            ) : (
+              <HiOutlineMenuAlt3 size={24} className="text-gray-800" />
+            )}
+          </button>
         </div>
-      </aside>
+      </motion.nav>
+
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              key="overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="lg:hidden fixed inset-0 bg-slate-900/45 backdrop-blur-sm z-40"
+              onClick={closeMenu}
+              aria-hidden="true"
+            />
+            <motion.aside
+              key="drawer"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 28, stiffness: 320 }}
+              className="lg:hidden fixed top-0 right-0 w-[85%] max-w-sm h-full z-50 bg-white shadow-2xl border-l border-gray-100"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile navigation"
+            >
+              <div className="flex flex-col h-full">
+                <div className="flex items-center justify-between px-4 py-4 border-b border-gray-100">
+                  <Link
+                    href="/"
+                    onClick={closeMenu}
+                    className="flex items-center gap-2"
+                  >
+                    <Image
+                      src={logo}
+                      alt="BIIN"
+                      height={40}
+                      width={52}
+                      className="object-contain"
+                      priority
+                    />
+                    <span className="text-lg font-bold bg-gradient-to-r from-slate-900 via-emerald-600 to-indigo-700 bg-clip-text text-transparent">
+                      BIIN
+                    </span>
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={closeMenu}
+                    className="p-2 rounded-xl hover:bg-gray-100 transition"
+                    aria-label="Close menu"
+                  >
+                    <HiOutlineX size={22} className="text-gray-700" />
+                  </button>
+                </div>
+
+                <ul className="flex-1 overflow-y-auto flex flex-col gap-1 px-3 py-5">
+                  {navLinks.map((link, idx) =>
+                    link.dropdown ? (
+                      <li key={link.name}>
+                        <button
+                          type="button"
+                          className="w-full flex items-center justify-between px-3 py-3 rounded-xl text-gray-800 hover:bg-indigo-50 font-medium text-base transition"
+                          onClick={() => handleDropdown(idx)}
+                        >
+                          <span>{link.name}</span>
+                          <BiChevronDown
+                            size={22}
+                            className={`transition-transform ${
+                              dropdownOpen === idx
+                                ? "rotate-180 text-indigo-700"
+                                : ""
+                            }`}
+                          />
+                        </button>
+                        <AnimatePresence initial={false}>
+                          {dropdownOpen === idx && (
+                            <motion.ul
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              className="overflow-hidden pl-2 space-y-1"
+                            >
+                              {link.dropdown.map((item) =>
+                                item.external ? (
+                                  <li key={item.name}>
+                                    <a
+                                      href={item.href}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 text-sm transition"
+                                      onClick={closeMenu}
+                                    >
+                                      {item.name}
+                                    </a>
+                                  </li>
+                                ) : (
+                                  <li key={item.name}>
+                                    <Link
+                                      href={item.href}
+                                      className="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 text-sm transition"
+                                      onClick={closeMenu}
+                                    >
+                                      {item.name}
+                                    </Link>
+                                  </li>
+                                )
+                              )}
+                            </motion.ul>
+                          )}
+                        </AnimatePresence>
+                      </li>
+                    ) : (
+                      <li key={link.name}>{renderNavItem(link, true)}</li>
+                    )
+                  )}
+                </ul>
+
+                <div className="px-4 pb-8 pt-2 border-t border-gray-100">
+                  <Link
+                    href="/get-involved"
+                    onClick={closeMenu}
+                    className="block w-full text-center py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-sky-500 text-white font-bold shadow-md hover:from-sky-500 hover:to-emerald-500 active:scale-[0.98] transition"
+                  >
+                    Join Now
+                  </Link>
+                </div>
+              </div>
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
